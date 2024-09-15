@@ -89,7 +89,6 @@
     <Compile Include="OracleRepository\SimuladorCuotasRepository.cs" />
     <Compile Include="OracleRepository\UbigeoRepository.cs" />
     <Compile Include="OracleRepository\UsuarioRepository.cs" />
-    <Compile Include="ProcedimientosAlmacenados\ProcedimientoNLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>

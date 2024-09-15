@@ -1,5 +1,5 @@
-using NLog;
-using Renavi.Transversal.Common;
+
+
 using System;
 using System.Web;
 using System.Web.Http;
@@ -10,9 +10,7 @@ namespace Renavi.Services.WebApi
     /// </summary>
     public class WebApiApplication : HttpApplication
     {
-        /// <summary>
-        /// </summary>
-        public static readonly Logger Logger;
+ 
 
         /// <summary>
         /// </summary>
@@ -20,7 +18,7 @@ namespace Renavi.Services.WebApi
         /// <param name="e"></param>
         protected void Application_End(object sender, EventArgs e)
         {
-            LogManager.Shutdown();
+          
         }
 
         /// <summary>
@@ -30,7 +28,7 @@ namespace Renavi.Services.WebApi
         protected void Application_Error(object sender, EventArgs e)
         {
             var exception = Server.GetLastError();
-            Logger?.Error(exception);
+            //Logger?.Error(exception);
         }
 
         /// <summary>

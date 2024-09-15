@@ -27,7 +27,7 @@ namespace Renavi.Services.WebApi
                     c?.SingleApiVersion("v1", "API Renavi")
                         ?.Description("API Renavi")
                         ?.TermsOfService("Nuestro servicio se encuentra disponible 24x7")
-                        ?.Contact(cc => cc?.Name("Team Compartamos")
+                        ?.Contact(cc => cc?.Name("Team Renavi")
                             ?.Url(url + "Contactanos")
                             ?.Email("aplicaciones@mivivienda.com.pe"))
                         ?.License(lc => lc?.Name("Uso autorizado para las aplicaciones de Fondo mi vivienda")

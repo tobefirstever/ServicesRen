@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-using NLog;
+ 
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -10,8 +10,7 @@ namespace Renavi.Transversal.Common
 {
     public class BaseClass
     {
-        public static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        public static readonly LogEventInfo TheEvent = new LogEventInfo(LogLevel.Error, "", "customs values");
+        
 
         public BaseClass()
         {
@@ -21,22 +20,10 @@ namespace Renavi.Transversal.Common
             {
                 string loginClaimString = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "LoginModel")?.Value;
                 var loginModel = JsonConvert.DeserializeObject<LoginModel>(loginClaimString);
-                TheEvent.Properties["IdSession"] = loginModel.IdSession;
+              
             }
         }
 
-        public void LogError(Exception e)
-        {
-            TheEvent.Message = "Exception";
-            TheEvent.Exception = e;
-            Logger.Error(TheEvent);
-        }
-
-        public void LogInfo(string info)
-        {
-            TheEvent.Message = info;
-            TheEvent.Exception = null;
-            Logger.Info(TheEvent);
-        }
+        
     }
 }

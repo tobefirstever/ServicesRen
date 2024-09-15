@@ -23,11 +23,10 @@ namespace Renavi.Services.WebApi.Controllers
                 return BadRequest();
             }
 
-            /*
+            /* Inyectar el  Cerbero.Services.Client y realizar la validacion de version y autenticacion
              CerberoResult ValidarVersion
-
-            CerberoResult AutenticarUsuario
-             */
+             CerberoResult AutenticarUsuario
+            */
 
 
             string authToken = TokenGenerator.GenerateTokenJwt(usuarioLoginDto.Username);
