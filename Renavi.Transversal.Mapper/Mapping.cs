@@ -8,7 +8,7 @@ namespace Renavi.Transversal.Mapper
         {
             AutoMapper.Mapper.Initialize(x =>
             {
-                x?.AddProfile<NLogPerfil>();
+                x?.AddProfile<UbigeoProfile>();
             });
         }
 

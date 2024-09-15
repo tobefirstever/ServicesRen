@@ -46,8 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IEntidadesTecnicasRepository.cs" />
     <Compile Include="Repository\IGeneralRepository.cs" />
-    <Compile Include="Repository\IGerenciaRepository.cs" />
-    <Compile Include="Repository\INLogRepository.cs" />
     <Compile Include="Repository\IOfertaInmobiliariaRepository.cs" />
     <Compile Include="Repository\IPrecalificacionRepository.cs" />
     <Compile Include="Repository\IProductosRepository.cs" />

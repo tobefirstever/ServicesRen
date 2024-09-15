@@ -8,7 +8,6 @@ using Renavi.Infrastructure.Configuration;
 using Renavi.Infrastructure.Interfaces.Configuration;
 using Renavi.Infrastructure.Interfaces.Repository;
 using Renavi.Infrastructure.Repository.OracleRepository;
-using Renavi.Infrastructure.Repository.SqlRepository;
 using Renavi.Infrastructure.Repository.UnitOfWork;
 using Renavi.Transversal.Common;
 using System;
@@ -38,26 +37,10 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IConnectionFactory, ConnectionFactory>();
 
             FluentMapper.Initialize(config =>
-            {
-                config.AddMap(new GerenciaMap());
+            {            
                 config.AddMap(new UbigeoMap());
             });
-
-            #region LogBusqueda
-
-            container.RegisterType<INLogApplication, NLogApplication>();
-            container.RegisterType<INLogDomain, NLogDomain>();
-            container.RegisterType<INLogRepository, NLogRepository>();
-
-            #endregion
-
-            #region Gerencia
-            container.RegisterType<IGerenciaApplication, GerenciaApplication>();
-            container.RegisterType<IGerenciaDomain, GerenciaDomain>();
-            container.RegisterType<IGerenciaRepository, GerenciaRepository>();
-            #endregion
-
-          
+       
             #region Entidades tecnicas
             container.RegisterType<IEntidadesTecnicasApplication, EntidadesTecnicasApplication>();
             container.RegisterType<IEntidadesTecnicasDomain, EntidadesTecnicasDomain>();

@@ -43,8 +43,6 @@
   <ItemGroup>
     <Compile Include="EntidadesTecnicasDomain.cs" />
     <Compile Include="GeneralDomain.cs" />
-    <Compile Include="GerenciaDomain.cs" />
-    <Compile Include="NLogDomain.cs" />
     <Compile Include="OfertaInmobiliariaDomain.cs" />
     <Compile Include="PrecalificacionDomain.cs" />
     <Compile Include="ProductosDomain.cs" />

@@ -43,8 +43,6 @@
   <ItemGroup>
     <Compile Include="IEntidadesTecnicasApplication.cs" />
     <Compile Include="IGeneralApplication.cs" />
-    <Compile Include="IGerenciaApplication.cs" />
-    <Compile Include="INLogApplication.cs" />
     <Compile Include="IOfertaInmobiliariaApplication.cs" />
     <Compile Include="IPrecalificacionApplication.cs" />
     <Compile Include="IProductosApplication.cs" />

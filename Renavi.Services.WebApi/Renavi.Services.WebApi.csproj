@@ -195,8 +195,6 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\EntidadesTecnicasController.cs" />
-    <Compile Include="Controllers\GerenciaController.cs" />
-    <Compile Include="Controllers\NLogController.cs" />
     <Compile Include="Controllers\OfertaInmobiliariaController.cs" />
     <Compile Include="Controllers\PrecalificacionController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />

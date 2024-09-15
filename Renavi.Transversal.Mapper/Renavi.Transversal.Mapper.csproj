@@ -48,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping.cs" />
-    <Compile Include="Profile\GerenciaProfile.cs" />
-    <Compile Include="Profile\NLogPerfil.cs" />
     <Compile Include="Profile\UbigeoProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
