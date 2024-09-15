@@ -57,10 +57,53 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IGerenciaRepository, GerenciaRepository>();
             #endregion
 
+          
+            #region Entidades tecnicas
+            container.RegisterType<IEntidadesTecnicasApplication, EntidadesTecnicasApplication>();
+            container.RegisterType<IEntidadesTecnicasDomain, EntidadesTecnicasDomain>();
+            container.RegisterType<IEntidadesTecnicasRepository, EntidadesTecnicasRepository>();
+            #endregion
+
+            #region General
+            container.RegisterType<IGeneralApplication, GeneralApplication>();
+            container.RegisterType<IGeneralDomain, GeneralDomain>();
+            container.RegisterType<IGeneralRepository, GeneralRepository>();
+            #endregion
+
+            #region Oferta inmobiliaria
+            container.RegisterType<IOfertaInmobiliariaApplication, OfertaInmobiliariaApplication>();
+            container.RegisterType<IOfertaInmobiliariaDomain, OfertaInmobiliariaDomain>();
+            container.RegisterType<IOfertaInmobiliariaRepository, OfertaInmobiliariaRepository>();
+            #endregion
+
+            #region Precalificacion
+            container.RegisterType<IPrecalificacionApplication, PrecalificacionApplication>();
+            container.RegisterType<IPrecalificacionDomain, PrecalificacionDomain>();
+            container.RegisterType<IPrecalificacionRepository, PrecalificacionRepository>();
+            #endregion
+
+            #region Productos
+            container.RegisterType<IProductosApplication, ProductosApplication>();
+            container.RegisterType<IProductosDomain, ProductosDomain>();
+            container.RegisterType<IProductosRepository, ProductosRepository>();
+            #endregion
+
+            #region Simulador
+            container.RegisterType<ISimuladorCuotasApplication, SimuladorCuotasApplication>();
+            container.RegisterType<ISimuladorCuotasDomain, SimuladorCuotasDomain>();
+            container.RegisterType<ISimuladorCuotasRepository, SimuladorCuotasRepository>();
+            #endregion
+
             #region Ubigeo
             container.RegisterType<IUbigeoApplication, UbigeoApplication>();
             container.RegisterType<IUbigeoDomain, UbigeoDomain>();
             container.RegisterType<IUbigeoRepository, UbigeoRepository>();
+            #endregion
+
+            #region Usuarios
+            container.RegisterType<IUsuarioApplication, UsuarioApplication>();
+            container.RegisterType<IUsuarioDomain, UsuarioDomain>();
+            container.RegisterType<IUsuarioRepository, UsuarioRepository>();
             #endregion
 
             return container;

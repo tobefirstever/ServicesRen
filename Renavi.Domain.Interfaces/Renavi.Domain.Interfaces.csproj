@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEntidadesTecnicasDomain.cs" />
+    <Compile Include="IGeneralDomain.cs" />
     <Compile Include="IGerenciaDomain.cs" />
     <Compile Include="INLogDomain.cs" />
+    <Compile Include="IOfertaInmobiliariaDomain.cs" />
+    <Compile Include="IPrecalificacionDomain.cs" />
+    <Compile Include="IProductosDomain.cs" />
+    <Compile Include="ISimuladorCuotasDomain.cs" />
     <Compile Include="IUbigeoDomain.cs" />
+    <Compile Include="IUsuarioDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

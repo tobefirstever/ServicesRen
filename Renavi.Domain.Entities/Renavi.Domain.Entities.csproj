@@ -49,8 +49,15 @@
   <ItemGroup>
     <Compile Include="Custom\BaseCustomClass.cs" />
     <Compile Include="Custom\NLog.cs" />
+    <Compile Include="Entities\EntidadesTecnicasEntity.cs" />
+    <Compile Include="Entities\GeneralEntity.cs" />
     <Compile Include="Entities\GerenciaEntity.cs" />
+    <Compile Include="Entities\OfertaInmobiliariaEntity.cs" />
+    <Compile Include="Entities\PrecalificacionEntity.cs" />
+    <Compile Include="Entities\ProductosEntity.cs" />
+    <Compile Include="Entities\SimuladorCuotasEntity.cs" />
     <Compile Include="Entities\UbigeoEntity.cs" />
+    <Compile Include="Entities\UsuarioEntity.cs" />
     <Compile Include="Mapping\GerenciaMap.cs" />
     <Compile Include="Mapping\UbigeoMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

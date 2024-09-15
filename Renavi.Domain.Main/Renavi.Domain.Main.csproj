@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntidadesTecnicasDomain.cs" />
+    <Compile Include="GeneralDomain.cs" />
     <Compile Include="GerenciaDomain.cs" />
     <Compile Include="NLogDomain.cs" />
+    <Compile Include="OfertaInmobiliariaDomain.cs" />
+    <Compile Include="PrecalificacionDomain.cs" />
+    <Compile Include="ProductosDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimuladorCuotasDomain.cs" />
     <Compile Include="UbigeoDomain.cs" />
+    <Compile Include="UsuarioDomain.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Renavi.Domain.Entities\Renavi.Domain.Entities.csproj">

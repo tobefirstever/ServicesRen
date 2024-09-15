@@ -1,30 +1,28 @@
 ﻿using Renavi.Application.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Renavi.Services.WebApi.Controllers
 {
-    public class GerenciaController : ApiController //BaseApiController
+    public class UbigeoController : ApiController
     {
-
-        private readonly IGerenciaApplication _gerenciaApplication;
-
         private readonly IUbigeoApplication _ubigeoApplication;
 
-        public GerenciaController(IGerenciaApplication gerenciaApplication,
-            IUbigeoApplication ubigeoApplication)
+        public UbigeoController(IUbigeoApplication ubigeoApplication)
         {
-            _gerenciaApplication = gerenciaApplication;
             _ubigeoApplication = ubigeoApplication;
         }
 
         [HttpGet()]
-        [Route("api/gerencia")]
+        [Route("api/ubigeo")]
         public async Task<IHttpActionResult> GetList()
         {
             return Ok(await _ubigeoApplication.GetList());
         }
-
-      
     }
 }

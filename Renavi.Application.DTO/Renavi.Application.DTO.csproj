@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\EntidadesTecnicas\EntidadesTecnicasDTO.cs" />
+    <Compile Include="Dtos\General\GeneralDto.cs" />
     <Compile Include="Dtos\Gerencia\GerenciaDto.cs" />
+    <Compile Include="Dtos\OfertaInmobiliaria\OfertaInmobiliariaDto.cs" />
+    <Compile Include="Dtos\Precalificacion\PrecalificacionDto.cs" />
+    <Compile Include="Dtos\Productos\ProductosDto.cs" />
+    <Compile Include="Dtos\SimuladorCuotas\SimuladorCuotasDto.cs" />
     <Compile Include="Dtos\Ubigeo\UbigeoDto.cs" />
+    <Compile Include="Dtos\Usuario\UsuarioDto.cs" />
     <Compile Include="NLogDto.cs" />
     <Compile Include="NLogForCreationRequestDto.cs" />
     <Compile Include="NLogForUpdateRequestDto.cs" />
@@ -52,5 +59,6 @@
     <Compile Include="UsuarioLoginRequestDto.cs" />
     <Compile Include="UsuarioLoginResponseDto.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

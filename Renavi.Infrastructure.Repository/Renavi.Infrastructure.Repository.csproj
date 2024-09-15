@@ -81,8 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\OracleDynamicParameters.cs" />
+    <Compile Include="OracleRepository\EntidadesTecnicasRepository.cs" />
+    <Compile Include="OracleRepository\GeneralRepository.cs" />
     <Compile Include="OracleRepository\GerenciaRepository.cs" />
+    <Compile Include="OracleRepository\OfertaInmobiliariaRepository.cs" />
+    <Compile Include="OracleRepository\PrecalificacionRepository.cs" />
+    <Compile Include="OracleRepository\ProductosRepository.cs" />
+    <Compile Include="OracleRepository\SimuladorCuotasRepository.cs" />
     <Compile Include="OracleRepository\UbigeoRepository.cs" />
+    <Compile Include="OracleRepository\UsuarioRepository.cs" />
     <Compile Include="ProcedimientosAlmacenados\ProcedimientoNLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRepository\NLogRepository.cs" />

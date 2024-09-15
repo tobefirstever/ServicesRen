@@ -194,8 +194,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\EntidadesTecnicasController.cs" />
     <Compile Include="Controllers\GerenciaController.cs" />
     <Compile Include="Controllers\NLogController.cs" />
+    <Compile Include="Controllers\OfertaInmobiliariaController.cs" />
+    <Compile Include="Controllers\PrecalificacionController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\SimuladorCuotasController.cs" />
+    <Compile Include="Controllers\UbigeoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\CustomPolicyProvider.cs" />
     <Compile Include="Core\DynamicPolicyProviderFactory.cs" />
     <Compile Include="Core\TokenGenerator.cs" />
@@ -230,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Renavi.Application.DTO\Renavi.Application.DTO.csproj">

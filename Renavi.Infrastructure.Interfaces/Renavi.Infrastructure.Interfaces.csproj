@@ -44,9 +44,16 @@
     <Compile Include="Configuration\IConnectionFactory.cs" />
     <Compile Include="Configuration\IConnectionStringProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IEntidadesTecnicasRepository.cs" />
+    <Compile Include="Repository\IGeneralRepository.cs" />
     <Compile Include="Repository\IGerenciaRepository.cs" />
     <Compile Include="Repository\INLogRepository.cs" />
+    <Compile Include="Repository\IOfertaInmobiliariaRepository.cs" />
+    <Compile Include="Repository\IPrecalificacionRepository.cs" />
+    <Compile Include="Repository\IProductosRepository.cs" />
+    <Compile Include="Repository\ISimuladorCuotasRepository.cs" />
     <Compile Include="Repository\IUbigeoRepository.cs" />
+    <Compile Include="Repository\IUsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Renavi.Domain.Entities\Renavi.Domain.Entities.csproj">

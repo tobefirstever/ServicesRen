@@ -23,6 +23,13 @@ namespace Renavi.Services.WebApi.Controllers
                 return BadRequest();
             }
 
+            /*
+             CerberoResult ValidarVersion
+
+            CerberoResult AutenticarUsuario
+             */
+
+
             string authToken = TokenGenerator.GenerateTokenJwt(usuarioLoginDto.Username);
             return Ok(
                 new Transversal.Common.Response<UsuarioLoginResponseDto>
