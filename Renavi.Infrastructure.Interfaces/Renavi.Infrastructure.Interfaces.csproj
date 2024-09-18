@@ -47,6 +47,7 @@
     <Compile Include="Repository\IEntidadesTecnicasRepository.cs" />
     <Compile Include="Repository\IGeneralRepository.cs" />
     <Compile Include="Repository\IOfertaInmobiliariaRepository.cs" />
+    <Compile Include="Repository\IParametroRepository.cs" />
     <Compile Include="Repository\IPrecalificacionRepository.cs" />
     <Compile Include="Repository\IProductosRepository.cs" />
     <Compile Include="Repository\ISimuladorCuotasRepository.cs" />

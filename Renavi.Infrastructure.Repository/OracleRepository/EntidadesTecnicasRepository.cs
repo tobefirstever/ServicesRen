@@ -27,8 +27,8 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
         {
             using (var conexion = _connectionFactory?.GetConnection())
             {
-                var dynamicParameters = new OracleDynamicParameters();
-                dynamicParameters.Add("ocGAR", OracleDbType.RefCursor, ParameterDirection.Output);
+                var dynamicParameters = new UtilParameters();
+                dynamicParameters.Add(name: "ocGAR", oracleDbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
                 return await conexion.QueryAsync<EntidadesTecnicasEntity>("PKGSTP_GARANTIA_CS_JOSE.SPRNSTP_PORTALFMV3", param: dynamicParameters, commandType: CommandType.StoredProcedure);
             }
         }

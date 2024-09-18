@@ -44,6 +44,7 @@
     <Compile Include="EntidadesTecnicasDomain.cs" />
     <Compile Include="GeneralDomain.cs" />
     <Compile Include="OfertaInmobiliariaDomain.cs" />
+    <Compile Include="ParametroDomain.cs" />
     <Compile Include="PrecalificacionDomain.cs" />
     <Compile Include="ProductosDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

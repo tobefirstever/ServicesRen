@@ -39,6 +39,7 @@ namespace Renavi.Transversal.IoC
             FluentMapper.Initialize(config =>
             {            
                 config.AddMap(new UbigeoMap());
+                config.AddMap(new ParametroMap());
             });
        
             #region Entidades tecnicas
@@ -87,6 +88,12 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IUsuarioApplication, UsuarioApplication>();
             container.RegisterType<IUsuarioDomain, UsuarioDomain>();
             container.RegisterType<IUsuarioRepository, UsuarioRepository>();
+            #endregion
+
+            #region Parametro
+            container.RegisterType<IParametroApplication, ParametroApplication>();
+            container.RegisterType<IParametroDomain, ParametroDomain>();
+            container.RegisterType<IParametroRepository, ParametroRepository>();
             #endregion
 
             return container;

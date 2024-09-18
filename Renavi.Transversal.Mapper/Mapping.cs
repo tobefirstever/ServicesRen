@@ -9,6 +9,7 @@ namespace Renavi.Transversal.Mapper
             AutoMapper.Mapper.Initialize(x =>
             {
                 x?.AddProfile<UbigeoProfile>();
+                x?.AddProfile<ParametroProfile>();
             });
         }
 

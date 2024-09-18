@@ -44,6 +44,7 @@
     <Compile Include="IEntidadesTecnicasApplication.cs" />
     <Compile Include="IGeneralApplication.cs" />
     <Compile Include="IOfertaInmobiliariaApplication.cs" />
+    <Compile Include="IParametroApplication.cs" />
     <Compile Include="IPrecalificacionApplication.cs" />
     <Compile Include="IProductosApplication.cs" />
     <Compile Include="ISimuladorCuotasApplication.cs" />

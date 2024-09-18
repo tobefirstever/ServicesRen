@@ -45,6 +45,7 @@
     <Compile Include="Dtos\EntidadesTecnicas\EntidadesTecnicasDTO.cs" />
     <Compile Include="Dtos\General\GeneralDto.cs" />
     <Compile Include="Dtos\OfertaInmobiliaria\OfertaInmobiliariaDto.cs" />
+    <Compile Include="Dtos\Parametro\ParametroDto.cs" />
     <Compile Include="Dtos\Precalificacion\PrecalificacionDto.cs" />
     <Compile Include="Dtos\Productos\ProductosDto.cs" />
     <Compile Include="Dtos\SimuladorCuotas\SimuladorCuotasDto.cs" />

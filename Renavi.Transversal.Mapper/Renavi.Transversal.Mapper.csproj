@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping.cs" />
+    <Compile Include="Profile\ParametroProfile.cs" />
     <Compile Include="Profile\UbigeoProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
