@@ -53,9 +53,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Renavi.Application.DTO\Renavi.Application.DTO.csproj">
+      <Project>{642ED228-7249-484F-93BC-6F2476668D14}</Project>
+      <Name>Renavi.Application.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Renavi.Domain.Entities\Renavi.Domain.Entities.csproj">
       <Project>{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}</Project>
       <Name>Renavi.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renavi.Transversal.Common\Renavi.Transversal.Common.csproj">
+      <Project>{561F5417-72F1-4F8C-814D-215D6D3508C4}</Project>
+      <Name>Renavi.Transversal.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

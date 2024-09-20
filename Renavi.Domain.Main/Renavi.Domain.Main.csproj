@@ -53,6 +53,10 @@
     <Compile Include="UsuarioDomain.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Renavi.Application.DTO\Renavi.Application.DTO.csproj">
+      <Project>{642ED228-7249-484F-93BC-6F2476668D14}</Project>
+      <Name>Renavi.Application.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Renavi.Domain.Entities\Renavi.Domain.Entities.csproj">
       <Project>{cdb14b86-4be2-4ac3-b42d-c2d020b46ac3}</Project>
       <Name>Renavi.Domain.Entities</Name>
@@ -64,6 +68,14 @@
     <ProjectReference Include="..\Renavi.Infrastructure.Interfaces\Renavi.Infrastructure.Interfaces.csproj">
       <Project>{fe6c1c6f-cf85-443f-8f3c-895e22ac8837}</Project>
       <Name>Renavi.Infrastructure.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renavi.Infrastructure.Services\Renavi.Infrastructure.Services.csproj">
+      <Project>{b27d866d-ec20-4f72-a6ca-69665e71e9c6}</Project>
+      <Name>Renavi.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renavi.Transversal.Common\Renavi.Transversal.Common.csproj">
+      <Project>{561F5417-72F1-4F8C-814D-215D6D3508C4}</Project>
+      <Name>Renavi.Transversal.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

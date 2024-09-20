@@ -15,6 +15,7 @@ namespace Renavi.Application.Main
     public class UbigeoApplication : IUbigeoApplication
     {
         private readonly IUbigeoDomain _ubigeoDomain;
+      
 
         public UbigeoApplication(IUbigeoDomain ubigeoDomain)
         {

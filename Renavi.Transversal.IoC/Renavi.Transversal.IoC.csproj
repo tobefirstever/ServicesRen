@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -94,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Startup.cs" />
     <Compile Include="UnityResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,6 +135,10 @@
     <ProjectReference Include="..\Renavi.Infrastructure.Repository\Renavi.Infrastructure.Repository.csproj">
       <Project>{9d42218c-d6b0-46b3-9350-65e6e09ae107}</Project>
       <Name>Renavi.Infrastructure.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renavi.Infrastructure.Services\Renavi.Infrastructure.Services.csproj">
+      <Project>{b27d866d-ec20-4f72-a6ca-69665e71e9c6}</Project>
+      <Name>Renavi.Infrastructure.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Renavi.Transversal.Common\Renavi.Transversal.Common.csproj">
       <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>

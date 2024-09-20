@@ -3,6 +3,7 @@ using Renavi.Application.Interfaces;
 using Renavi.Domain.Entities.Entities;
 using Renavi.Domain.Interfaces;
 using Renavi.Transversal.Common;
+using Renavi.Transversal.Common.Cabiel;
 using Renavi.Transversal.Mapper;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Renavi.Application.Main
     {
         private readonly IEntidadesTecnicasDomain _entidadesTenicasRepository;
 
-     
+        
 
         public EntidadesTecnicasApplication(IEntidadesTecnicasDomain entidadesTenicasRepository)
         {
@@ -38,6 +39,25 @@ namespace Renavi.Application.Main
                 respuesta.Message = Mensajes.ErrorEnconsulta;
                 
             }
+            return respuesta;
+        }
+
+        public async Task<Response<IEnumerable<EntidadesTecnicasDTO>>> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request)
+        {
+            var respuesta = new Response<IEnumerable<EntidadesTecnicasDTO>> { Data = new List<EntidadesTecnicasDTO>() };
+
+            try
+            {
+                var entidades = await _entidadesTenicasRepository.ObtenerEntidadesTecnicas(request);
+                respuesta.Data = Mapping.Map<IEnumerable<Entidad>, IEnumerable<EntidadesTecnicasDTO>>(entidades);
+
+            }
+            catch(Exception ex)
+            {
+                respuesta.IsSuccess = false;
+                respuesta.Message = Mensajes.ErrorEnconsulta;
+            }
+
             return respuesta;
         }
     }

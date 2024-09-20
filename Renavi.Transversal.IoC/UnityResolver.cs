@@ -9,6 +9,9 @@ using Renavi.Infrastructure.Interfaces.Configuration;
 using Renavi.Infrastructure.Interfaces.Repository;
 using Renavi.Infrastructure.Repository.OracleRepository;
 using Renavi.Infrastructure.Repository.UnitOfWork;
+using Renavi.Infrastructure.Services.Cabiel.Base;
+using Renavi.Infrastructure.Services.Cabiel.Contracts;
+using Renavi.Infrastructure.Services.Cabiel.Implementations;
 using Renavi.Transversal.Common;
 using System;
 using System.Collections.Generic;
@@ -32,6 +35,9 @@ namespace Renavi.Transversal.IoC
         public static IUnityContainer InitializeContainer()
         {
             var container = new UnityContainer();
+
+            Startup.RegisterSoapClient(container, "soap1");
+
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterSingleton<IConnectionStringProvider, ConnectionStringProvider>();
             container.RegisterType<IConnectionFactory, ConnectionFactory>();
@@ -58,6 +64,12 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IOfertaInmobiliariaApplication, OfertaInmobiliariaApplication>();
             container.RegisterType<IOfertaInmobiliariaDomain, OfertaInmobiliariaDomain>();
             container.RegisterType<IOfertaInmobiliariaRepository, OfertaInmobiliariaRepository>();
+            #endregion
+
+            #region Parametro
+            container.RegisterType<IParametroApplication, ParametroApplication>();
+            container.RegisterType<IParametroDomain, ParametroDomain>();
+            container.RegisterType<IParametroRepository, ParametroRepository>();
             #endregion
 
             #region Precalificacion
@@ -90,11 +102,11 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IUsuarioRepository, UsuarioRepository>();
             #endregion
 
-            #region Parametro
-            container.RegisterType<IParametroApplication, ParametroApplication>();
-            container.RegisterType<IParametroDomain, ParametroDomain>();
-            container.RegisterType<IParametroRepository, ParametroRepository>();
+            #region Servicio Cabiel
+            container.RegisterType<IClientCabiel, ClientCabiel>();
+            container.RegisterType<IExternalServiceCabiel, ExternalServiceCabiel>();
             #endregion
+
 
             return container;
         }

@@ -233,6 +233,10 @@
       <Project>{6d41f802-39a8-4fac-869e-2a26b21476e1}</Project>
       <Name>Renavi.Application.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Renavi.Infrastructure.Services\Renavi.Infrastructure.Services.csproj">
+      <Project>{B27D866D-EC20-4F72-A6CA-69665E71E9C6}</Project>
+      <Name>Renavi.Infrastructure.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Renavi.Transversal.Common\Renavi.Transversal.Common.csproj">
       <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>
       <Name>Renavi.Transversal.Common</Name>

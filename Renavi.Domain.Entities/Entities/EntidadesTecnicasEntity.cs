@@ -8,7 +8,7 @@ namespace Renavi.Domain.Entities.Entities
 {
     public class EntidadesTecnicasEntity
     {
-        public int Id { get; set; }
+        public string RazonSocial{ get; set; }
 
     }
 }

@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB8E022D-2D9B-4709-B64D-BD12454B0661}</ProjectGuid>
+    <ProjectGuid>{B27D866D-EC20-4F72-A6CA-69665E71E9C6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Renavi.Transversal.Mapper</RootNamespace>
-    <AssemblyName>Renavi.Transversal.Mapper</AssemblyName>
+    <RootNamespace>Renavi.Infrastructure.Services</RootNamespace>
+    <AssemblyName>Renavi.Infrastructure.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,14 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,24 +44,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping.cs" />
-    <Compile Include="Profile\EntidadTecnicaProfile.cs" />
-    <Compile Include="Profile\ParametroProfile.cs" />
-    <Compile Include="Profile\UbigeoProfile.cs" />
+    <Compile Include="Cabiel\Base\ClientCabiel.cs" />
+    <Compile Include="Cabiel\Base\IClientCabiel.cs" />
+    <Compile Include="Cabiel\Contracts\IExternalServiceCabiel.cs" />
+    <Compile Include="Cabiel\Implementations\ExternalServiceCabiel.cs" />
+    <Compile Include="Connected Services\ServiceCabiel\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Renavi.Application.DTO\Renavi.Application.DTO.csproj">
-      <Project>{642ed228-7249-484f-93bc-6f2476668d14}</Project>
-      <Name>Renavi.Application.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Renavi.Domain.Entities\Renavi.Domain.Entities.csproj">
-      <Project>{cdb14b86-4be2-4ac3-b42d-c2d020b46ac3}</Project>
-      <Name>Renavi.Domain.Entities</Name>
-    </ProjectReference>
+    <None Include="app.config" />
+    <None Include="Connected Services\ServiceCabiel\ServicioWEB.wsdl" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceCabiel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCabiel\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCabiel\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCabiel\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Renavi.Transversal.Common\Renavi.Transversal.Common.csproj">
       <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>
       <Name>Renavi.Transversal.Common</Name>

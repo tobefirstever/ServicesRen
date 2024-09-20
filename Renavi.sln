@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Renavi.Infrastructure.Services", "Renavi.Infrastructure.Services\Renavi.Infrastructure.Services.csproj", "{B27D866D-EC20-4F72-A6CA-69665E71E9C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{17AF0530-0612-4222-BDA4-6635D94F6DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17AF0530-0612-4222-BDA4-6635D94F6DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17AF0530-0612-4222-BDA4-6635D94F6DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27D866D-EC20-4F72-A6CA-69665E71E9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27D866D-EC20-4F72-A6CA-69665E71E9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27D866D-EC20-4F72-A6CA-69665E71E9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27D866D-EC20-4F72-A6CA-69665E71E9C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{9D42218C-D6B0-46B3-9350-65E6E09AE107} = {3E449E94-1C62-409F-BF04-5EDDCA004EC5}
 		{404297DB-CFF0-4595-88B3-1C973938A952} = {8451727D-B575-408C-A055-39A485374478}
 		{17AF0530-0612-4222-BDA4-6635D94F6DB1} = {8451727D-B575-408C-A055-39A485374478}
+		{B27D866D-EC20-4F72-A6CA-69665E71E9C6} = {3E449E94-1C62-409F-BF04-5EDDCA004EC5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDBF14BA-F3FC-4A80-B59B-6D3BC967CC28}

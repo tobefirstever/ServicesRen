@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarPaginasMenuWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPaginaPadre" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPlantilla" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPaginasMenuWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPaginasMenuWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDetallePaginaWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDetallePaginaWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDetallePaginaWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarGlosarioTerminosxLetraWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codLetra" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarGlosarioTerminosxLetraWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarGlosarioTerminosxLetraWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPreguntasFrecuentesCategoriasWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPlantilla" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPreguntasFrecuentesCategoriasWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPreguntasFrecuentesCategoriasWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPreguntasFrecuentesxCategoriaWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCategoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPreguntasFrecuentesxCategoriaWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPreguntasFrecuentesxCategoriaWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarNovedadesxTipoWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="modo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarNovedadesxTipoWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarNovedadesxTipoWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNovedadWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina_ED" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNovedadWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerNovedadWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarTestimonioWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarTestimonioWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarTestimonioWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTestimonioWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina_ED" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTestimonioWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTestimonioWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarBannersWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPlantilla" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarBannersWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarBannersWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPaginasArbolArchivosWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPaginaAAPadre" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPaginasArbolArchivosWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPaginasArbolArchivosWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPaginasxNivelWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPlantilla" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPaginaPadre" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPaginasxNivelWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPaginasxNivelWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarArbolArchivosxPaginaWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarArbolArchivosxPaginaWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarArbolArchivosxPaginaWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarTestimonioWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cTitular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cImagen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDescripion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarTestimonioWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrarTestimonioWebResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarProyectosWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cTipoProy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarProyectosWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarProyectosWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDatosContactenosWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cNombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cApellidos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoDoc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cTipoDocDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cNumeroDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cTelefono" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPais" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cPaisDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDepartamentoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProvincia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cProvinciaDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDistrito" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDistritoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idConsulta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cConsultaDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cMedioDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMedio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDetalleConsultaDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDatosPersonales" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProducto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cProductoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idZonaInteres" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cZonaInteresDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPlazoComprar" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cPlazoComprarDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCuotaInicial" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cCuotaInicialDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cRecibirEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDatosContactenosWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrarDatosContactenosWebResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDatosReclamosWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cNombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cApellidos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoDoc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cTipoDocDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cNumeroDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDireccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPais" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cPaisDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDepartamentoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProvincia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cProvinciaDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDistrito" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDistritoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idReclamoDirigido" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cReclamoDirigidoDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDetalleReclamoDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDatosPersonales" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cNumeroruc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cRazonSocial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cNumeroticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDatosReclamosWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrarDatosReclamosWebResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerParametros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="scodGrupo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerParametrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerParametrosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerListaET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRazonSocial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRUC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDepartamento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClasificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerListaETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerListaETResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerEntidades">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerEntidadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerEntidadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarRutaArchivosReclamosWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDatosRutaArchivoReclamosWeb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarRutaArchivosReclamosWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarRutaArchivosReclamosWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarReclamoconOTRSReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroidTickePortalweb" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroTicketOTRSReclamo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarReclamoconOTRSReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarReclamoconOTRSReclamoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarPaginasMenuWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPaginasMenuWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarPaginasMenuWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPaginasMenuWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetallePaginaWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDetallePaginaWeb" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetallePaginaWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDetallePaginaWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarGlosarioTerminosxLetraWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarGlosarioTerminosxLetraWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarGlosarioTerminosxLetraWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarGlosarioTerminosxLetraWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPreguntasFrecuentesCategoriasWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPreguntasFrecuentesCategoriasWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarPreguntasFrecuentesCategoriasWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPreguntasFrecuentesCategoriasWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPreguntasFrecuentesxCategoriaWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPreguntasFrecuentesxCategoriaWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarPreguntasFrecuentesxCategoriaWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPreguntasFrecuentesxCategoriaWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarNovedadesxTipoWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarNovedadesxTipoWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarNovedadesxTipoWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarNovedadesxTipoWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNovedadWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerNovedadWeb" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNovedadWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerNovedadWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarTestimonioWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarTestimonioWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarTestimonioWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarTestimonioWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTestimonioWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerTestimonioWeb" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTestimonioWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTestimonioWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarBannersWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarBannersWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarBannersWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarBannersWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPaginasArbolArchivosWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPaginasArbolArchivosWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarPaginasArbolArchivosWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPaginasArbolArchivosWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPaginasxNivelWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPaginasxNivelWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarPaginasxNivelWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPaginasxNivelWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarArbolArchivosxPaginaWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarArbolArchivosxPaginaWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarArbolArchivosxPaginaWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarArbolArchivosxPaginaWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarTestimonioWebSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarTestimonioWeb" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarTestimonioWebSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarTestimonioWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarProyectosWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarProyectosWeb" />
+  </wsdl:message>
+  <wsdl:message name="ListarProyectosWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarProyectosWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDatosContactenosWebSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarDatosContactenosWeb" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDatosContactenosWebSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarDatosContactenosWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDatosReclamosWebSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarDatosReclamosWeb" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDatosReclamosWebSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarDatosReclamosWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerParametrosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerParametros" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerParametrosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerParametrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerListaETSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerListaET" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerListaETSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerListaETResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEntidadesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerEntidades" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEntidadesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerEntidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRutaArchivosReclamosWebSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarRutaArchivosReclamosWeb" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRutaArchivosReclamosWebSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarRutaArchivosReclamosWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarReclamoconOTRSReclamoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarReclamoconOTRSReclamo" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarReclamoconOTRSReclamoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarReclamoconOTRSReclamoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioWEBSoap">
+    <wsdl:operation name="ListarPaginasMenuWeb">
+      <wsdl:input message="tns:ListarPaginasMenuWebSoapIn" />
+      <wsdl:output message="tns:ListarPaginasMenuWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallePaginaWeb">
+      <wsdl:input message="tns:ObtenerDetallePaginaWebSoapIn" />
+      <wsdl:output message="tns:ObtenerDetallePaginaWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarGlosarioTerminosxLetraWeb">
+      <wsdl:input message="tns:ListarGlosarioTerminosxLetraWebSoapIn" />
+      <wsdl:output message="tns:ListarGlosarioTerminosxLetraWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesCategoriasWeb">
+      <wsdl:input message="tns:ListarPreguntasFrecuentesCategoriasWebSoapIn" />
+      <wsdl:output message="tns:ListarPreguntasFrecuentesCategoriasWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesxCategoriaWeb">
+      <wsdl:input message="tns:ListarPreguntasFrecuentesxCategoriaWebSoapIn" />
+      <wsdl:output message="tns:ListarPreguntasFrecuentesxCategoriaWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarNovedadesxTipoWeb">
+      <wsdl:input message="tns:ListarNovedadesxTipoWebSoapIn" />
+      <wsdl:output message="tns:ListarNovedadesxTipoWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNovedadWeb">
+      <wsdl:input message="tns:ObtenerNovedadWebSoapIn" />
+      <wsdl:output message="tns:ObtenerNovedadWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTestimonioWeb">
+      <wsdl:input message="tns:ListarTestimonioWebSoapIn" />
+      <wsdl:output message="tns:ListarTestimonioWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTestimonioWeb">
+      <wsdl:input message="tns:ObtenerTestimonioWebSoapIn" />
+      <wsdl:output message="tns:ObtenerTestimonioWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarBannersWeb">
+      <wsdl:input message="tns:ListarBannersWebSoapIn" />
+      <wsdl:output message="tns:ListarBannersWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasArbolArchivosWeb">
+      <wsdl:input message="tns:ListarPaginasArbolArchivosWebSoapIn" />
+      <wsdl:output message="tns:ListarPaginasArbolArchivosWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasxNivelWeb">
+      <wsdl:input message="tns:ListarPaginasxNivelWebSoapIn" />
+      <wsdl:output message="tns:ListarPaginasxNivelWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarArbolArchivosxPaginaWeb">
+      <wsdl:input message="tns:ListarArbolArchivosxPaginaWebSoapIn" />
+      <wsdl:output message="tns:ListarArbolArchivosxPaginaWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTestimonioWeb">
+      <wsdl:input message="tns:RegistrarTestimonioWebSoapIn" />
+      <wsdl:output message="tns:RegistrarTestimonioWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProyectosWeb">
+      <wsdl:input message="tns:ListarProyectosWebSoapIn" />
+      <wsdl:output message="tns:ListarProyectosWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosContactenosWeb">
+      <wsdl:input message="tns:RegistrarDatosContactenosWebSoapIn" />
+      <wsdl:output message="tns:RegistrarDatosContactenosWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosReclamosWeb">
+      <wsdl:input message="tns:RegistrarDatosReclamosWebSoapIn" />
+      <wsdl:output message="tns:RegistrarDatosReclamosWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerParametros">
+      <wsdl:input message="tns:ObtenerParametrosSoapIn" />
+      <wsdl:output message="tns:ObtenerParametrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaET">
+      <wsdl:input message="tns:ObtenerListaETSoapIn" />
+      <wsdl:output message="tns:ObtenerListaETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEntidades">
+      <wsdl:input message="tns:ObtenerEntidadesSoapIn" />
+      <wsdl:output message="tns:ObtenerEntidadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRutaArchivosReclamosWeb">
+      <wsdl:input message="tns:RegistrarRutaArchivosReclamosWebSoapIn" />
+      <wsdl:output message="tns:RegistrarRutaArchivosReclamosWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarReclamoconOTRSReclamo">
+      <wsdl:input message="tns:ActualizarReclamoconOTRSReclamoSoapIn" />
+      <wsdl:output message="tns:ActualizarReclamoconOTRSReclamoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioWEBSoap" type="tns:ServicioWEBSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPaginasMenuWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarPaginasMenuWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallePaginaWeb">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDetallePaginaWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarGlosarioTerminosxLetraWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarGlosarioTerminosxLetraWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesCategoriasWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarPreguntasFrecuentesCategoriasWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesxCategoriaWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarPreguntasFrecuentesxCategoriaWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarNovedadesxTipoWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarNovedadesxTipoWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNovedadWeb">
+      <soap:operation soapAction="http://tempuri.org/ObtenerNovedadWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTestimonioWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTestimonioWeb">
+      <soap:operation soapAction="http://tempuri.org/ObtenerTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarBannersWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarBannersWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasArbolArchivosWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarPaginasArbolArchivosWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasxNivelWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarPaginasxNivelWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarArbolArchivosxPaginaWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarArbolArchivosxPaginaWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTestimonioWeb">
+      <soap:operation soapAction="http://tempuri.org/RegistrarTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProyectosWeb">
+      <soap:operation soapAction="http://tempuri.org/ListarProyectosWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosContactenosWeb">
+      <soap:operation soapAction="http://tempuri.org/RegistrarDatosContactenosWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosReclamosWeb">
+      <soap:operation soapAction="http://tempuri.org/RegistrarDatosReclamosWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerParametros">
+      <soap:operation soapAction="http://tempuri.org/ObtenerParametros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaET">
+      <soap:operation soapAction="http://tempuri.org/ObtenerListaET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEntidades">
+      <soap:operation soapAction="http://tempuri.org/ObtenerEntidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRutaArchivosReclamosWeb">
+      <soap:operation soapAction="http://tempuri.org/RegistrarRutaArchivosReclamosWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarReclamoconOTRSReclamo">
+      <soap:operation soapAction="http://tempuri.org/ActualizarReclamoconOTRSReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioWEBSoap12" type="tns:ServicioWEBSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPaginasMenuWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarPaginasMenuWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetallePaginaWeb">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDetallePaginaWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarGlosarioTerminosxLetraWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarGlosarioTerminosxLetraWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesCategoriasWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarPreguntasFrecuentesCategoriasWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPreguntasFrecuentesxCategoriaWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarPreguntasFrecuentesxCategoriaWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarNovedadesxTipoWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarNovedadesxTipoWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNovedadWeb">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerNovedadWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTestimonioWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTestimonioWeb">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarBannersWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarBannersWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasArbolArchivosWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarPaginasArbolArchivosWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaginasxNivelWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarPaginasxNivelWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarArbolArchivosxPaginaWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarArbolArchivosxPaginaWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTestimonioWeb">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarTestimonioWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProyectosWeb">
+      <soap12:operation soapAction="http://tempuri.org/ListarProyectosWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosContactenosWeb">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarDatosContactenosWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDatosReclamosWeb">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarDatosReclamosWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerParametros">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerParametros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaET">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerListaET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEntidades">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerEntidades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRutaArchivosReclamosWeb">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarRutaArchivosReclamosWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarReclamoconOTRSReclamo">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarReclamoconOTRSReclamo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioWEB">
+    <wsdl:port name="ServicioWEBSoap" binding="tns:ServicioWEBSoap">
+      <soap:address location="http://cabiel/PORTAL.BL.SI/ServicioWEB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioWEBSoap12" binding="tns:ServicioWEBSoap12">
+      <soap12:address location="http://cabiel/PORTAL.BL.SI/ServicioWEB.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

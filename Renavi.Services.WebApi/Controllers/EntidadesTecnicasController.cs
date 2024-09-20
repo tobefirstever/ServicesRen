@@ -1,4 +1,5 @@
-﻿using Renavi.Application.Interfaces;
+﻿using Renavi.Application.DTO.Dtos.EntidadesTecnicas;
+using Renavi.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,11 @@ namespace Renavi.Services.WebApi.Controllers
         }
 
 
-        [HttpGet()]
+        [HttpPost()]
         [Route("api/entidadestecnicas")]
-        public async Task<IHttpActionResult> GetList()
+        public async Task<IHttpActionResult> GetList([FromBody] RequestEntidadesTecnicasDTO requestEntidadesTecnicasDTO)
         {
-            return Ok(await _entidadesTecnicasApplication.GetList());
+            return Ok(await _entidadesTecnicasApplication.ObtenerEntidadesTecnicas(requestEntidadesTecnicasDTO));
         }
     }
 }
