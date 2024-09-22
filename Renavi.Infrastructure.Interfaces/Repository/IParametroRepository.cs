@@ -9,6 +9,6 @@ namespace Renavi.Infrastructure.Interfaces.Repository
 {
     public interface IParametroRepository
     {
-        Task<IEnumerable<ParametroEntity>> ObtenerParametro(int idGrupo, string codigoAbreviatura);
+        Task<IEnumerable<ParametroEntity>> ObtenerParametro(string grupoParametros);
     }
 }

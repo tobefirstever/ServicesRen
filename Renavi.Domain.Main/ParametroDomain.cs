@@ -18,9 +18,9 @@ namespace Renavi.Domain.Main
             _parametroRepository = parametroRepository;
         }
 
-        public async Task<IEnumerable<ParametroEntity>> ObtenerParametro(int idGrupo, string codigoAbreviatura)
+        public async Task<IEnumerable<ParametroEntity>> ObtenerParametro(string grupoParametros)
         {
-            return await _parametroRepository.ObtenerParametro(idGrupo, codigoAbreviatura);
+            return await _parametroRepository.ObtenerParametro(grupoParametros);
         }
     }
 }

@@ -20,14 +20,13 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<IEnumerable<ParametroEntity>> ObtenerParametro(int idGrupo, string codigoAbreviatura)
+        public async Task<IEnumerable<ParametroEntity>> ObtenerParametro(string grupoParametros)
         {
             using (var conexion = _connectionFactory?.GetConnection())
             {
                 var dynamicParameters = new UtilParameters();
                 dynamicParameters.Add(name: "pPAR", value: null, oracleDbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
-                dynamicParameters.Add(name: "pCPAR_GRUPO_ID", value: idGrupo, oracleDbType: OracleDbType.Int32, direction: ParameterDirection.Input);
-                dynamicParameters.Add(name: "pSCODIGO", value: codigoAbreviatura, oracleDbType: OracleDbType.Varchar2, direction: ParameterDirection.Input);
+                dynamicParameters.Add(name: "pSCODIGO", value: grupoParametros, oracleDbType: OracleDbType.Varchar2, direction: ParameterDirection.Input);
                 return await conexion.QueryAsync<ParametroEntity>("PKGRNV_PARAMETRO.SPRRNV_LEER", param: dynamicParameters, commandType: CommandType.StoredProcedure);
             }
         }

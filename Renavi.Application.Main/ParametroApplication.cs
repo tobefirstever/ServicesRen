@@ -21,11 +21,11 @@ namespace Renavi.Application.Main
             _parametroDomain = parametroDomain;
         }
 
-        public async Task<Response<IEnumerable<ParametroDto>>> Buscar(int idGrupo, string codigoAbreviatura)
+        public async Task<Response<IEnumerable<ParametroDto>>> Buscar(string grupoParametros)
         {
             var response = new Response<IEnumerable<ParametroDto>> { Data = new List<ParametroDto>() };
 
-            IEnumerable<ParametroEntity> parametroEntities = await _parametroDomain.ObtenerParametro(idGrupo, codigoAbreviatura);
+            IEnumerable<ParametroEntity> parametroEntities = await _parametroDomain.ObtenerParametro(grupoParametros);
 
             try
             {

@@ -21,9 +21,9 @@ namespace Renavi.Services.WebApi.Controllers
         [HttpGet()]
         ///[Route("api/parametro/{idGrupo}/{codigoAbreviatura}")]
         [Route("api/parametro")]
-        public async Task<IHttpActionResult> Buscar([FromUri] int idGrupo, [FromUri] string codigoAbreviatura = null)
+        public async Task<IHttpActionResult> Buscar([FromUri] string grupoParametros)
         {
-            return Ok(await _parametroApplication.Buscar(idGrupo, codigoAbreviatura));
+            return Ok(await _parametroApplication.Buscar(grupoParametros));
         }
 
 

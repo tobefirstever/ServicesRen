@@ -8,10 +8,20 @@ namespace Renavi.Application.DTO.Dtos.Parametro
 {
     public class ParametroDto
     {
-        public int Id { get; set; }
+        public int IdParametro { get; set; }
 
-        public string CodigoAbreviatura { get; set; }
+        public string CodigoParametro { get; set; }
 
-        public string Nombre { get; set; }
+        public int IdDetalleParametro { get; set; }
+
+        public string CodigoDetalleParametro { get; set; }
+
+        public string Descripcion { get; set; }
+
+        public string Valor1 { get; set; }
+
+        public string Valor2 { get; set; }
+
+        public string Valor3 { get; set; }
     }
 }
