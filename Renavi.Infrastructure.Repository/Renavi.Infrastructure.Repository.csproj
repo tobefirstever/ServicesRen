@@ -86,10 +86,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\UtilParameters.cs" />
+    <Compile Include="OracleRepository\ContactoRepository.cs" />
+    <Compile Include="OracleRepository\DireccionRepository.cs" />
     <Compile Include="OracleRepository\EntidadesTecnicasRepository.cs" />
     <Compile Include="OracleRepository\GeneralRepository.cs" />
     <Compile Include="OracleRepository\OfertaInmobiliariaRepository.cs" />
     <Compile Include="OracleRepository\ParametroRepository.cs" />
+    <Compile Include="OracleRepository\PersonaRepository.cs" />
     <Compile Include="OracleRepository\PrecalificacionRepository.cs" />
     <Compile Include="OracleRepository\ProductosRepository.cs" />
     <Compile Include="OracleRepository\SimuladorCuotasRepository.cs" />

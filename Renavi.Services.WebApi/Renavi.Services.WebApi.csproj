@@ -189,6 +189,7 @@
     <Compile Include="Controllers\EntidadesTecnicasController.cs" />
     <Compile Include="Controllers\OfertaInmobiliariaController.cs" />
     <Compile Include="Controllers\ParametroController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PrecalificacionController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\SimuladorCuotasController.cs" />

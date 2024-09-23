@@ -54,6 +54,7 @@
     <Compile Include="GeneralApplication.cs" />
     <Compile Include="OfertaInmobiliariaApplication.cs" />
     <Compile Include="ParametroApplication.cs" />
+    <Compile Include="PerfilApplication.cs" />
     <Compile Include="PrecalificacionApplication.cs" />
     <Compile Include="ProductosApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

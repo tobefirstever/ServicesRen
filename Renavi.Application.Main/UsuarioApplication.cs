@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Renavi.Application.Main
 {
@@ -20,6 +21,7 @@ namespace Renavi.Application.Main
         public UsuarioApplication(IUsuarioDomain usuarioDomain)
         {
             _usuarioDomain = usuarioDomain;
+          
         }
 
         public async Task<Response<IEnumerable<UsuarioDto>>> GetList()
@@ -30,5 +32,8 @@ namespace Renavi.Application.Main
             response.Data = Mapping.Map<IEnumerable<UsuarioEntity>, IEnumerable<UsuarioDto>>(gerenciaEntities);
             return response;
         }
+
+       
+
     }
 }

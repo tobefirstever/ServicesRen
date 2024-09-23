@@ -46,6 +46,9 @@ namespace Renavi.Transversal.IoC
             {            
                 config.AddMap(new UbigeoMap());
                 config.AddMap(new ParametroMap());
+                config.AddMap(new ContactoMap());
+                config.AddMap(new DireccionMap());
+                config.AddMap(new PersonaMap());
             });
        
             #region Entidades tecnicas
@@ -107,6 +110,17 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IExternalServiceCabiel, ExternalServiceCabiel>();
             #endregion
 
+            container.RegisterType<IContactoRepository, ContactoRepository>();
+            container.RegisterType<IContactoDomain, ContactoDomain>();
+
+            container.RegisterType<IDireccionRepository, DireccionRepository>();
+            container.RegisterType<IDireccionDomain, DireccionDomain>();
+
+
+            container.RegisterType<IPersonaRepository, PersonaRepository>();
+            container.RegisterType<IPersonaDomain, PersonaDomain>();
+
+            container.RegisterType<IPerfilApplication, PerfilApplication>();
 
             return container;
         }

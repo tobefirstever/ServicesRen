@@ -25,7 +25,7 @@ namespace Renavi.Infrastructure.Configuration
 
             if (conn == null)
             {
-                throw new InvalidOperationException("Failed to create a connection using the provided factory.");
+                throw new InvalidOperationException("Ocurrio un error al crear la cadena de conexion");
             }
 
             conn.ConnectionString = _connectionString;
@@ -38,7 +38,7 @@ namespace Renavi.Infrastructure.Configuration
             {
                 // Logger.LogError(ex, "Error opening database connection");
                 conn.Dispose();
-                throw;
+                throw new ArgumentException("Ocurrio un error al abrir  la  cadena conexion de base de datos");
             }
 
             return conn;

@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace Renavi.Application.Interfaces
 {
-    public interface IUsuarioApplication
+    public interface IPerfilApplication
     {
-        Task<Response<IEnumerable<UsuarioDto>>> GetList();
+        Task<Response<bool>> RegistrarPerfil(PerfilRequestDto perfilRequestDto);
 
+        Task<Response<PersonaDto>> ObtenerPerfil(int id);
     }
 }
