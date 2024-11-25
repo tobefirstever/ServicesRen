@@ -24,6 +24,8 @@ namespace Renavi.Services.WebApi.Controllers
                 return BadRequest();
             }
 
+            
+
             return Ok(await _perfilApplication.RegistrarPerfil(request));
         }
 

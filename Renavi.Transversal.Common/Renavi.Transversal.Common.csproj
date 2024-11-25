@@ -34,6 +34,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -55,10 +58,12 @@
     <Compile Include="Cabiel\Entidad.cs" />
     <Compile Include="CacheMemoria.cs" />
     <Compile Include="Constantes.cs" />
-    <Compile Include="IAppLogger.cs" />
+    <Compile Include="GeneralResponse.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="Mensajes.cs" />
+    <Compile Include="NLogLogger.cs" />
     <Compile Include="RegistroWindows.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +74,13 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.ShimLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

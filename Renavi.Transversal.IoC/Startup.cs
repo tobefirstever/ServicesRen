@@ -16,7 +16,7 @@ namespace Renavi.Transversal.IoC
 
             if (string.IsNullOrEmpty(url))
             {
-                throw new ConfigurationErrorsException($"La URL del servicio SOAP para {baseAddressKey} no está configurada.");
+                throw new InvalidOperationException($"La URL del servicio SOAP para {baseAddressKey} no está configurada.");
             }
 
             container.RegisterFactory<ServicioWEBSoapClient>(c =>

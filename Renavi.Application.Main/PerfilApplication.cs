@@ -5,9 +5,6 @@ using Renavi.Domain.Interfaces;
 using Renavi.Transversal.Common;
 using Renavi.Transversal.Mapper;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
@@ -23,14 +20,20 @@ namespace Renavi.Application.Main
 
         public PerfilApplication(IContactoDomain contactoDomain, IDireccionDomain direccionDomain , IPersonaDomain personaDomain)
         {
-            _contactoDomain = contactoDomain;
+            _contactoDomain =   contactoDomain;
             _direccionDomain = direccionDomain;
             _personaDomain = personaDomain;
         }
 
-        public async Task<Response<bool>> RegistrarPerfil(PerfilRequestDto perfilRequestDto)
+        public async Task<GeneralResponse> RegistrarPerfil(PerfilRequestDto perfilRequestDto)
         {
             var response = new Response<bool>();
+
+            if (perfilRequestDto == null || perfilRequestDto.InformacionPersonal == null || perfilRequestDto.InformacionPersonal.InformacionContacto == null || perfilRequestDto.InformacionPersonal.DireccionDomicilio == null)
+            {
+                throw new InvalidOperationException(Mensajes.ERROR_PERFIL_DATA);
+            }
+
 
             var contactoRequest = perfilRequestDto.InformacionPersonal.InformacionContacto;
 
@@ -48,54 +51,38 @@ namespace Renavi.Application.Main
 
             using (var transaccion = new TransactionScope(TransactionScopeOption.Required, options))
             {
-                try
-                {
-                    if (perfilRequestDto == null)
-                    {
-                        response.IsWarning = true;
-                        response.Message = Mensajes.ErrorAlRegistrarDataInvalida;
-                        return response;
-                    }
 
-                    var contactoEntity = await _contactoDomain?.RegistrarContacto(Mapping.Map<ContactoDto, ContactoEntity>(contactoRequest), usuarioCreacion);
-                    var direccionEntity = await _direccionDomain?.RegistarDireccion(Mapping.Map<DireccionDto, DireccionEntity>(direccionRequest), usuarioCreacion);
 
-                    personaRequest.DireccionDomicilio.IdDireccion = direccionEntity.IdDireccion;
-                    personaRequest.InformacionContacto.IdContacto = contactoEntity.IdContacto;
+                var contactoEntity = await (_contactoDomain ?? throw new InvalidOperationException("_contactoDomain no está inicializado.")).RegistrarContacto(Mapping.Map<ContactoDto, ContactoEntity>(contactoRequest), usuarioCreacion);
+                var direccionEntity = await (_direccionDomain ?? throw new InvalidOperationException("_direccionDomain no está inicializado.")).RegistarDireccion(Mapping.Map<DireccionDto, DireccionEntity>(direccionRequest), usuarioCreacion);
 
-                    var idPersona = await _personaDomain.RegistrarPersona(Mapping.Map<PersonaDto, PersonaEntity>(personaRequest), usuarioCreacion);
+                personaRequest.DireccionDomicilio.IdDireccion = direccionEntity.IdDireccion;
+                personaRequest.InformacionContacto.IdContacto = contactoEntity.IdContacto;
+                await _personaDomain.RegistrarPersona(Mapping.Map<PersonaDto, PersonaEntity>(personaRequest), usuarioCreacion);
 
-                    response.Data = true;
-                    transaccion.Complete();
-                }
-                catch (Exception ex)
-                {
-                    response.IsSuccess = false;
-                    response.Message = Mensajes.ERROR_REGISTRO_CONTACTO;
-                    //  Logger?.Error(exception, exception.Message);
-                }
+                response.Data = true;
+                transaccion.Complete();
             }
 
-            return response;
+            return new GeneralResponse
+            {
+                Data = null,
+                Message = Mensajes.PROCESO_EXITOSO,
+                Success = true
+            };
         }
 
-        public async Task<Response<PersonaDto>> ObtenerPerfil(int id)
+        public async Task<GeneralResponse> ObtenerPerfil(int id)
         {
             var response = new Response<PersonaDto> { Data = new PersonaDto() };
+            response.Data = Mapping.Map<PersonaEntity, PersonaDto>(await _personaDomain.ObtenerPersona(id));
 
-            try
+            return new GeneralResponse
             {
-                var data = await _personaDomain.ObtenerPersona(id);
-
-                response.Data = Mapping.Map<PersonaEntity, PersonaDto>(data);
-            }
-            catch(Exception ex)
-            {
-                response.IsSuccess = false;
-                response.Message = Mensajes.ERROR_REGISTRO_CONTACTO;
-            }
-
-            return response;
+                Data = response.Data,
+                Message = Mensajes.PROCESO_EXITOSO,
+                Success = true
+            };
         }
     }
 }

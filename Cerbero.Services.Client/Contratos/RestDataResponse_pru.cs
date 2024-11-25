@@ -8,8 +8,8 @@ namespace Cerbero.Services.Client.Contratos
 {
     public class RestDataResponse_pru
     {
-        public static int STATUS_OK = 1;
-        public static int STATUS_ERROR = 0;
+        public static readonly int STATUS_OK = 1;
+        public static readonly int STATUS_ERROR = 0;
 
         public Object data { get; set; }
         public int status { get; set; }

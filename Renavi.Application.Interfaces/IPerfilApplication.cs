@@ -10,8 +10,8 @@ namespace Renavi.Application.Interfaces
 {
     public interface IPerfilApplication
     {
-        Task<Response<bool>> RegistrarPerfil(PerfilRequestDto perfilRequestDto);
+        Task<GeneralResponse> RegistrarPerfil(PerfilRequestDto perfilRequestDto);
 
-        Task<Response<PersonaDto>> ObtenerPerfil(int id);
+        Task<GeneralResponse> ObtenerPerfil(int id);
     }
 }

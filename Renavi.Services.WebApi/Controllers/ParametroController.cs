@@ -19,7 +19,7 @@ namespace Renavi.Services.WebApi.Controllers
         }
 
         [HttpGet()]
-        ///[Route("api/parametro/{idGrupo}/{codigoAbreviatura}")]
+        
         [Route("api/parametro")]
         public async Task<IHttpActionResult> Buscar([FromUri] string grupoParametros)
         {

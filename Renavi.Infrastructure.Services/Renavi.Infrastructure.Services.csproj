@@ -61,6 +61,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Connected Services\ServiceCabiel\ServicioWEB.wsdl" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +84,13 @@
       <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>
       <Name>Renavi.Transversal.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.32.0.97167\analyzers\SonarAnalyzer.ShimLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

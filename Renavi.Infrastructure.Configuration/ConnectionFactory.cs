@@ -36,9 +36,9 @@ namespace Renavi.Infrastructure.Configuration
             }
             catch (Exception ex)
             {
-                // Logger.LogError(ex, "Error opening database connection");
+              
                 conn.Dispose();
-                throw new ArgumentException("Ocurrio un error al abrir  la  cadena conexion de base de datos");
+                throw new ArgumentException("Ocurrio un error al abrir  la  cadena conexion de base de datos" + " detalle : " + ex.Message);
             }
 
             return conn;

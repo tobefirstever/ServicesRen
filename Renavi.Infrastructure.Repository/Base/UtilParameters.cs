@@ -11,12 +11,9 @@ namespace Renavi.Infrastructure.Repository.Base
     {
         private readonly DynamicParameters dynamicParameters = new DynamicParameters();
         private readonly List<OracleParameter> oracleParameters = new List<OracleParameter>();
-        private readonly OracleDynamicParameters oracleDynamicParameters = new OracleDynamicParameters();
+       
 
-        public void Add(string name, object value = null, DbType? dbType = null, ParameterDirection? direction = null, int? size = null)
-        {
-            dynamicParameters.Add(name, value, dbType, direction, size);
-        }
+      
 
         public void Add(string name, OracleDbType oracleDbType, ParameterDirection direction, object value = null)
         {
@@ -33,6 +30,9 @@ namespace Renavi.Infrastructure.Repository.Base
             oracleParameters.Add(oracleParameter);
         }
 
+
+      
+
         public void AddParameters(IDbCommand command, SqlMapper.Identity identity)
         {
             ((SqlMapper.IDynamicParameters)dynamicParameters).AddParameters(command, identity);
@@ -45,10 +45,7 @@ namespace Renavi.Infrastructure.Repository.Base
             }
         }
 
-        public void Add(string name, object value = null, OracleMappingType? dbType = null, ParameterDirection? direction = null, int? size = null)
-        {
-            oracleDynamicParameters.Add(name, value, dbType, direction, size);
-        }
+        
 
     }
 }

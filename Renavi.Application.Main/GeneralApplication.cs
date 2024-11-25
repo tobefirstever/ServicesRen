@@ -28,17 +28,15 @@ namespace Renavi.Application.Main
         public async Task<Response<IEnumerable<GeneralDto>>> Listar()
         {
             var respuesta = new Response<IEnumerable<GeneralDto>> { Data = new List<GeneralDto>() };
-            try
-            {
+           
                 IEnumerable<GeneralEntity> general = await _generalDomain.GetList();
                 respuesta.Data = Mapping.Map<IEnumerable<GeneralEntity>, IEnumerable<GeneralDto>>(general);
-            }
-            catch (Exception ex)
-            {
+            
+           
                 respuesta.IsSuccess = false;
                 respuesta.Message = Mensajes.ErrorEnconsulta;
                
-            }
+            
             return respuesta;
         }
     }

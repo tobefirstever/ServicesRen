@@ -78,7 +78,7 @@ namespace Renavi.Services.WebApi.Core
             return Task<HttpResponseMessage>.Factory.StartNew(() => new HttpResponseMessage(statusCode) { });
         }
 
-        public bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+        public  bool  LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
         {
             if (expires != null && DateTime.UtcNow < expires)
             {

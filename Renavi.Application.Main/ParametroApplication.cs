@@ -24,24 +24,10 @@ namespace Renavi.Application.Main
         public async Task<Response<IEnumerable<ParametroDto>>> Buscar(string grupoParametros)
         {
             var response = new Response<IEnumerable<ParametroDto>> { Data = new List<ParametroDto>() };
-
             IEnumerable<ParametroEntity> parametroEntities = await _parametroDomain.ObtenerParametro(grupoParametros);
-
-            try
-            {
-                response.Data = Mapping.Map<IEnumerable<ParametroEntity>, IEnumerable<ParametroDto>>(parametroEntities);
-            }
-            catch(Exception ex)
-            {
-                response.IsSuccess = false;
-                response.Message = ex.Message;
-            }
-
-            
+            response.Data = Mapping.Map<IEnumerable<ParametroEntity>, IEnumerable<ParametroDto>>(parametroEntities);
 
             return response;
-
-
         }
     }
 }

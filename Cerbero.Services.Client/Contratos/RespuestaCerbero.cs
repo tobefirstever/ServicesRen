@@ -16,9 +16,9 @@ namespace Cerbero.Services.Client.Contratos
     public class RestDataResponse
     {
 
-        public static int STATUS_OK = 1;
+        private static readonly int STATUS_OK = 1;
 
-        public static int STATUS_ERROR = 0;
+        private static readonly int STATUS_ERROR = 0;
 
 
     }

@@ -28,17 +28,15 @@ namespace Renavi.Application.Main
         public async Task<Response<IEnumerable<EntidadesTecnicasDTO>>> GetList()
         {
             var respuesta = new Response<IEnumerable<EntidadesTecnicasDTO>> { Data = new List<EntidadesTecnicasDTO>() };
-            try
-            {
+          
                 IEnumerable<EntidadesTecnicasEntity> entidadesTecnicas = await _entidadesTenicasRepository.GetList();
                 respuesta.Data = Mapping.Map<IEnumerable<EntidadesTecnicasEntity>, IEnumerable<EntidadesTecnicasDTO>>(entidadesTecnicas);
-            }
-            catch (Exception ex)
-            {
+           
+           
                 respuesta.IsSuccess = false;
                 respuesta.Message = Mensajes.ErrorEnconsulta;
                 
-            }
+           
             return respuesta;
         }
 
@@ -46,17 +44,14 @@ namespace Renavi.Application.Main
         {
             var respuesta = new Response<IEnumerable<EntidadesTecnicasDTO>> { Data = new List<EntidadesTecnicasDTO>() };
 
-            try
-            {
+           
                 var entidades = await _entidadesTenicasRepository.ObtenerEntidadesTecnicas(request);
                 respuesta.Data = Mapping.Map<IEnumerable<Entidad>, IEnumerable<EntidadesTecnicasDTO>>(entidades);
 
-            }
-            catch(Exception ex)
-            {
+          
                 respuesta.IsSuccess = false;
                 respuesta.Message = Mensajes.ErrorEnconsulta;
-            }
+           
 
             return respuesta;
         }
