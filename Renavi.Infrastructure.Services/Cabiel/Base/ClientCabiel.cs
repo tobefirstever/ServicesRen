@@ -18,13 +18,18 @@ namespace Renavi.Infrastructure.Services.Cabiel.Base
         public ServicioWEBSoapClient GetServicioWEBSoapClient()
         {
             ThrowIfDisposed();
+            // Configurar timeouts
+            _servicioWEBSoapClient.Endpoint.Binding.SendTimeout = TimeSpan.FromMinutes(5);
+            _servicioWEBSoapClient.Endpoint.Binding.ReceiveTimeout = TimeSpan.FromMinutes(5);
+
+
             return _servicioWEBSoapClient;
         }
 
         public async Task<DataTable> GetEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion)
         {
             ThrowIfDisposed();
-            return await _servicioWEBSoapClient.ObtenerListaETAsync(razonSocial, ruc, departamento, clasificacion);
+            return await _servicioWEBSoapClient.ObtenerListaETAsync(string.Empty, string.Empty, string.Empty, clasificacion);
         }
 
         

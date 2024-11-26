@@ -12,6 +12,6 @@ namespace Renavi.Application.Interfaces
     {
         Task<Response<IEnumerable<EntidadesTecnicasDTO>>> GetList();
 
-        Task<Response<IEnumerable<EntidadesTecnicasDTO>>> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request);
+        Task<GeneralResponse> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request);
     }
 }

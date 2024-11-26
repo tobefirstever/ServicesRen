@@ -10,6 +10,6 @@ namespace Renavi.Infrastructure.Services.Cabiel.Contracts
 {
    public interface IExternalServiceCabiel
     {
-        Task<List<Entidad>> ObtenerEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion);
+        Task<List<Entidad>> ObtenerEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion, int pageIndex, int pageSize);
     }
 }

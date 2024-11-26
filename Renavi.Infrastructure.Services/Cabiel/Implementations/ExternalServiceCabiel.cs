@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Renavi.Infrastructure.Services.Cabiel.Base;
 using Renavi.Transversal.Common.Cabiel;
 using Renavi.Transversal.Common;
+using System.Linq;
 
 namespace Renavi.Infrastructure.Services.Cabiel.Implementations
 {
@@ -17,11 +18,13 @@ namespace Renavi.Infrastructure.Services.Cabiel.Implementations
             _clientCabiel = clientCabiel;
         }
 
-        public async Task<List<Entidad>> ObtenerEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion)
+        public async Task<List<Entidad>> ObtenerEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion, int pageIndex, int pageSize)
         {
             var response = await _clientCabiel.GetEntidadesTecnicas(razonSocial, ruc, departamento, clasificacion);
             var listaEntidades = Utilitarios.ConvertirDataTableALista(response);
+
             return listaEntidades;
+           
         }
     }
 }

@@ -40,20 +40,35 @@ namespace Renavi.Application.Main
             return respuesta;
         }
 
-        public async Task<Response<IEnumerable<EntidadesTecnicasDTO>>> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request)
+        public async Task<GeneralResponse> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request)
         {
-            var respuesta = new Response<IEnumerable<EntidadesTecnicasDTO>> { Data = new List<EntidadesTecnicasDTO>() };
+            var resultado = new ResultadoEntidadesTecnicasDTO();
+         
+            var listaEntidades = Mapping.Map<IEnumerable<Entidad>, IEnumerable<EntidadesTecnicasDTO>>(await _entidadesTenicasRepository.ObtenerEntidadesTecnicas(request)).ToList();
 
-           
-                var entidades = await _entidadesTenicasRepository.ObtenerEntidadesTecnicas(request);
-                respuesta.Data = Mapping.Map<IEnumerable<Entidad>, IEnumerable<EntidadesTecnicasDTO>>(entidades);
+            int totalRegistros = listaEntidades.Count;
 
-          
-                respuesta.IsSuccess = false;
-                respuesta.Message = Mensajes.ErrorEnconsulta;
-           
+            var listaFiltrada = listaEntidades.Where(e =>
+                (string.IsNullOrEmpty(request.RazonSocial) || e.RazonSocial.Contains(request.RazonSocial)) &&
+                (string.IsNullOrEmpty(request.Ruc) || e.Ruc.Contains(request.Ruc)) &&
+                (string.IsNullOrEmpty(request.Departamento) || e.Departamento == request.Departamento) &&
+                (string.IsNullOrEmpty(request.Clasificacion) || e.Clasificacion == request.Clasificacion)).ToList();
 
-            return respuesta;
+            int totalRegistrosFiltrados = listaFiltrada.Count;
+
+
+            var datosPaginados = listaFiltrada.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+
+            resultado.EntidadesTecnicas = datosPaginados;
+            resultado.TotalRegistros = totalRegistros;
+            resultado.TotalRegistrosFiltrados = totalRegistrosFiltrados;
+
+            return new GeneralResponse
+            {
+                Data = resultado,
+                Success = true,
+                Message = Mensajes.PROCESO_EXITOSO
+            };
         }
     }
 }

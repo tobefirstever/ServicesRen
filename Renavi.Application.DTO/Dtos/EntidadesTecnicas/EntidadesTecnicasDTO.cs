@@ -21,6 +21,15 @@ namespace Renavi.Application.DTO.Dtos.EntidadesTecnicas
         public string Clasificacion { get; set; }
     }
 
+    public class ResultadoEntidadesTecnicasDTO
+    {
+        public List<EntidadesTecnicasDTO> EntidadesTecnicas { get; set; }
+
+        public int TotalRegistros { get; set; }
+
+        public int TotalRegistrosFiltrados { get; set; }
+    }
+
     public class RequestEntidadesTecnicasDTO
     {
         public string RazonSocial { get; set; }
@@ -30,6 +39,10 @@ namespace Renavi.Application.DTO.Dtos.EntidadesTecnicas
         public string Departamento { get; set; }
 
         public string Clasificacion { get; set; }
+
+        public int PageIndex { get; set; }
+
+        public int PageSize { get; set; }
 
     }
 }

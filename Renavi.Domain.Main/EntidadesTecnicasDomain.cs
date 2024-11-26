@@ -31,7 +31,8 @@ namespace Renavi.Domain.Main
 
         public async Task<IEnumerable<Entidad>> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request)
         {
-            return await _externalServiceCabiel.ObtenerEntidadesTecnicas(request.RazonSocial, request.Ruc, request.Departamento, request.Clasificacion);
+           return await _externalServiceCabiel.ObtenerEntidadesTecnicas(request.RazonSocial, request.Ruc, request.Departamento, request.Clasificacion, request.PageIndex, request.PageSize);
+ 
         }
     }
 }
