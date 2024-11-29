@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.Productos;
+using Renavi.Domain.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Renavi.Infrastructure.Interfaces.Repository
 {
     public interface IProductosRepository
     {
-        Task<IEnumerable<ProductosEntity>> GetList();
+        Task<IEnumerable<ProductosWebResponseDto>> GetList(ProductosWebDto request);
     }
 }

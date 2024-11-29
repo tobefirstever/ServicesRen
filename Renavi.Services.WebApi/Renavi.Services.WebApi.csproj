@@ -177,6 +177,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomContent\api-key-header-auth.js" />
+    <None Include="Connected Services\ServicioWebPortal\ServicioWEB.disco" />
+    <None Include="Connected Services\ServicioWebPortal\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWebPortal\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWebPortal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -184,6 +191,12 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Connected Services\ServicioWebPortal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AgenciaController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\EntidadesTecnicasController.cs" />
@@ -193,7 +206,9 @@
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\SimuladorCuotasController.cs" />
     <Compile Include="Controllers\UbigeoController.cs" />
+    <Compile Include="Controllers\MetricasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Core\CustomPolicyProvider.cs" />
     <Compile Include="Core\DynamicPolicyProviderFactory.cs" />
     <Compile Include="Core\TokenGenerator.cs" />
@@ -207,12 +222,14 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Config\appSettings.Local.config" />
+    <None Include="Connected Services\ServicioWebPortal\ServicioWEB.wsdl" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -246,6 +263,12 @@
       <Name>Renavi.Transversal.Mapper</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioWebPortal\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -261,7 +284,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54271</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:44344/RenaviRest</IISUrl>
+          <IISUrl>http://localhost:44344/RenaviRestInterno</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

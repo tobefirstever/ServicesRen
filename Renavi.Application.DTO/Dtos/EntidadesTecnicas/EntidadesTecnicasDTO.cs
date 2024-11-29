@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace Renavi.Application.DTO.Dtos.EntidadesTecnicas
 {
-    public class EntidadesTecnicasDTO
+    public class EntidadesTecnicasDto
     {
-        public int Id { get; set; }
+        public string RazonSocial { get; set; }
+
+        public string Ruc { get; set; }
+
+        public string Departamento { get; set; }
+
+        public string Clasificacion { get; set; }
+
+        public int PageIndex { get; set; }
+
+        public int PageSize { get; set; }
+
+    
     }
 }

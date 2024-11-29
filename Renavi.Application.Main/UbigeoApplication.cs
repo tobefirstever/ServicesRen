@@ -22,13 +22,39 @@ namespace Renavi.Application.Main
         }
 
 
-        public async Task<Response<IEnumerable<UbigeoDto>>> GetList()
+        public async Task<IEnumerable<UbigeoResponseDto>> GetList(UbigeoDto request)
         {
-            var response = new Response<IEnumerable<UbigeoDto>> { Data = new List<UbigeoDto>() };
+            var response = new List<UbigeoResponseDto>();
             IEnumerable<UbigeoEntity> gerenciaEntities = await _ubigeoDomain.GetList();
+            var listado = obtenerDatos(gerenciaEntities, request.IdDepartamento, request.IdProvincia);
 
-            response.Data = Mapping.Map<IEnumerable<UbigeoEntity>, IEnumerable<UbigeoDto>>(gerenciaEntities);
+            response = Mapping.Map<IEnumerable<UbigeoEntity>, IEnumerable<UbigeoResponseDto>>(listado).ToList();
             return response;
+        }
+
+        public IEnumerable<UbigeoEntity> obtenerDatos(IEnumerable<UbigeoEntity> gerenciaEntities, int Departamento, int Provincia)
+        {
+
+            var listado = gerenciaEntities;
+
+
+            if (Departamento == 0 && Provincia == 0)
+            {
+                listado = gerenciaEntities.Where(x => x.IdProvincia == 0 && x.IdDistrito==0);
+            }
+
+
+            if (Departamento != 0 && Provincia == 0)
+            {
+                listado = gerenciaEntities.Where(x => x.IdDepartamento == Departamento && x.IdDistrito==0 && x.IdProvincia!=0);
+            }
+
+            if (Departamento != 0 && Provincia != 0)
+            {
+                listado = gerenciaEntities.Where(x => x.IdDepartamento == Departamento && x.IdProvincia==Provincia && x.IdDistrito!=0);
+            }
+
+            return listado;
         }
     }
 }

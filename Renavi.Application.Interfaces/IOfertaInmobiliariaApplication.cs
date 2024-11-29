@@ -10,6 +10,6 @@ namespace Renavi.Application.Interfaces
 {
     public interface IOfertaInmobiliariaApplication
     {
-        Task<Response<IEnumerable<OfertaInmobiliariaDto>>> GetList();
+        Task<IEnumerable<OfertaInmobiliariaResponseDto>> GetList(List<OfertaInmobiliariaResponseDto> lista, OfertaInmobiliariaDto request);
     }
 }

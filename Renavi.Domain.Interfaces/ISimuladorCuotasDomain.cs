@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.SimuladorCuotas;
+using Renavi.Domain.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Renavi.Domain.Interfaces
 {
     public interface ISimuladorCuotasDomain
     {
-        Task<IEnumerable<SimuladorCuotasEntity>> GetList();
+        Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList();
     }
 }

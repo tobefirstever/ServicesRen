@@ -8,7 +8,8 @@ namespace Renavi.Application.DTO.Dtos.Productos
 {
     public class ProductosDto
     {
-        public int Id { get; set; }
-        public int Nombre { get; set; }
+        public int Tipo_producto  { get; set; }
+        public int opcion { get; set; }
+
     }
 }

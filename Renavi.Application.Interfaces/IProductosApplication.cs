@@ -10,6 +10,8 @@ namespace Renavi.Application.Interfaces
 {
     public interface IProductosApplication
     {
-        Task<Response<IEnumerable<ProductosDto>>> GetList();
+        Task<IEnumerable<ProductosResponseDto>> GetList(ProductosDto request);
+
+        Task<IEnumerable<ProductosWebResponseDto>> GetListWeb(ProductosWebDto request);
     }
 }

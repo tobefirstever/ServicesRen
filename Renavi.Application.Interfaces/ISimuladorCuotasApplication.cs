@@ -10,6 +10,10 @@ namespace Renavi.Application.Interfaces
 {
     public interface ISimuladorCuotasApplication
     {
-        Task<Response<IEnumerable<SimuladorCuotasDto>>> GetList();
+        Task<SimuladorCuotasComprasResponseDto> GetList(SimuladorCuotasComprasDto request);
+        Task<SimuladorCuotasMejoramientoResponseDto> GetListMejoramiento(SimuladorCuotasMejoramientoDto request);
+        Task<SimuladorCuotasConstruccionResponseDto> GetListConstruccion(SimuladorCuotasConstruccionDto request);
+        Task<SimuladorCronogramaResponseDto> GetCronograma(SimuladorCronogramaDto request);
+        Task<List<SimuladorBancosTasasResponseDto>> GetTasas();
     }
 }

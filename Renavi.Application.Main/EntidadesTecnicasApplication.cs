@@ -24,13 +24,13 @@ namespace Renavi.Application.Main
         }
 
 
-        public async Task<Response<IEnumerable<EntidadesTecnicasDTO>>> GetList()
+        public async Task<Response<IEnumerable<EntidadesTecnicasDto>>> GetList()
         {
-            var respuesta = new Response<IEnumerable<EntidadesTecnicasDTO>> { Data = new List<EntidadesTecnicasDTO>() };
+            var respuesta = new Response<IEnumerable<EntidadesTecnicasDto>> { Data = new List<EntidadesTecnicasDto>() };
             try
             {
                 IEnumerable<EntidadesTecnicasEntity> entidadesTecnicas = await _entidadesTenicasRepository.GetList();
-                respuesta.Data = Mapping.Map<IEnumerable<EntidadesTecnicasEntity>, IEnumerable<EntidadesTecnicasDTO>>(entidadesTecnicas);
+                respuesta.Data = Mapping.Map<IEnumerable<EntidadesTecnicasEntity>, IEnumerable<EntidadesTecnicasDto>>(entidadesTecnicas);
             }
             catch (Exception ex)
             {
@@ -39,6 +39,33 @@ namespace Renavi.Application.Main
                 
             }
             return respuesta;
+        }
+
+
+        public async Task<EntidadesTecnicasResponseDto> ObtenerEntidadesTecnicas(List<EntidadesTecnicas> lista,EntidadesTecnicasDto request)
+        {
+            var resultado = new EntidadesTecnicasResponseDto();
+
+            var listaEntidades = Mapping.Map<IEnumerable<EntidadesTecnicas>, IEnumerable<EntidadesTecnicasDTO>>(lista).ToList();
+
+            int totalRegistros = listaEntidades.Count;
+
+            var listaFiltrada = listaEntidades.Where(e =>
+                (string.IsNullOrEmpty(request.RazonSocial) || e.RazonSocial.Contains(request.RazonSocial)) &&
+                (string.IsNullOrEmpty(request.Ruc) || e.Ruc.Contains(request.Ruc)) &&
+                (string.IsNullOrEmpty(request.Departamento) || e.Departamento == request.Departamento) &&
+                (string.IsNullOrEmpty(request.Clasificacion) || e.Clasificacion == request.Clasificacion)).ToList();
+
+            int totalRegistrosFiltrados = listaFiltrada.Count;
+
+
+            var datosPaginados = listaFiltrada.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+
+            resultado.EntidadesTecnicas = datosPaginados;
+            resultado.TotalRegistros = totalRegistros;
+            resultado.TotalRegistrosFiltrados = totalRegistrosFiltrados;
+
+            return resultado;
         }
     }
 }

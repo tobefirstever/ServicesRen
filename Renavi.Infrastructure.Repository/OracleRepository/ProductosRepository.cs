@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using Renavi.Application.DTO.Dtos.Productos;
 using Renavi.Domain.Entities.Entities;
 using Renavi.Infrastructure.Interfaces.Configuration;
 using Renavi.Infrastructure.Interfaces.Repository;
@@ -22,13 +23,14 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<IEnumerable<ProductosEntity>> GetList()
+        public async Task<IEnumerable<ProductosWebResponseDto>> GetList(ProductosWebDto request)
         {
             using (var conexion = _connectionFactory?.GetConnection())
             {
                 var dynamicParameters = new UtilParameters();
-                dynamicParameters.Add(name : "ocGAR", oracleDbType: OracleDbType.RefCursor,direction: ParameterDirection.Output);
-                return await conexion.QueryAsync<ProductosEntity>("PKGSTP_GARANTIA_CS_JOSE.SPRNSTP_PORTALFMV3", param: dynamicParameters, commandType: CommandType.StoredProcedure);
+                dynamicParameters.Add(name: "INPANTALLA", oracleDbType: OracleDbType.Int32, direction: ParameterDirection.Input, request.pantalla);
+                dynamicParameters.Add(name : "OLISTA", oracleDbType: OracleDbType.RefCursor,direction: ParameterDirection.Output);
+                return await conexion.QueryAsync<ProductosWebResponseDto>("PKGRNV_GENERAL.SPRRNV_LISTAR_CONTENIDO", param: dynamicParameters, commandType: CommandType.StoredProcedure);
             }
         }
     }

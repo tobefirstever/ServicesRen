@@ -10,6 +10,6 @@ namespace Renavi.Application.Interfaces
 {
     public interface IUbigeoApplication
     {
-        Task<Response<IEnumerable<UbigeoDto>>> GetList();
+        Task<IEnumerable<UbigeoResponseDto>> GetList(UbigeoDto request);
     }
 }

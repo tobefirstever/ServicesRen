@@ -8,7 +8,18 @@ namespace Renavi.Application.DTO.Dtos.OfertaInmobiliaria
 {
     public class OfertaInmobiliariaDto
     {
-        public int Id { get; set; }
+        public string  Opcion { get; set; }
+        public string nombres { get; set; }
+        public string departamento { get; set; }
+        public string provincia { get; set; }
+        public string distrito { get; set; }
+        public string areamin { get; set; }
+        public string areamax { get; set; }
+        public string arealotemin { get; set; }
+        public string arealotemax { get; set; }
+        public string preciomin { get; set; }
+        public string preciomax { get; set; }
+        public string bonoverde { get; set; }
 
     }
 }

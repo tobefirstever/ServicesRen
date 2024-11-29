@@ -10,5 +10,6 @@ namespace Renavi.Domain.Entities.Entities
     {
         public int Id { get; set; }
         public int Nombre { get; set; }
+
     }
 }

@@ -9,9 +9,9 @@ namespace Renavi.Infrastructure.Repository.Base
 {
     public class UtilParameters : SqlMapper.IDynamicParameters
     {
-        private readonly DynamicParameters dynamicParameters = new DynamicParameters();
-        private readonly List<OracleParameter> oracleParameters = new List<OracleParameter>();
-        private readonly OracleDynamicParameters oracleDynamicParameters = new OracleDynamicParameters();
+        public readonly DynamicParameters dynamicParameters = new DynamicParameters();
+        public readonly List<OracleParameter> oracleParameters = new List<OracleParameter>();
+        public readonly OracleDynamicParameters oracleDynamicParameters = new OracleDynamicParameters();
 
         public void Add(string name, object value = null, DbType? dbType = null, ParameterDirection? direction = null, int? size = null)
         {

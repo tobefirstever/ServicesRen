@@ -138,6 +138,22 @@
       <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>
       <Name>Renavi.Transversal.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RenaviExterno.Application.Interfaces\RenaviExterno.Application.Interfaces.csproj">
+      <Project>{86bc6e60-874b-463d-b73b-194eb7fa300a}</Project>
+      <Name>RenaviExterno.Application.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RenaviExterno.Application\RenaviExterno.Application.csproj">
+      <Project>{ffad624b-184c-4e6d-a4fe-04e2d6dba90f}</Project>
+      <Name>RenaviExterno.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RenaviExterno.Services.Interfaces\RenaviExterno.Services.Interfaces.csproj">
+      <Project>{6D39ECAB-7135-45F5-9AD2-95A95E770DF3}</Project>
+      <Name>RenaviExterno.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RenaviExterno.Services\RenaviExterno.Services.csproj">
+      <Project>{b337c328-076d-4ce3-b362-3b0862f3d7d2}</Project>
+      <Name>RenaviExterno.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

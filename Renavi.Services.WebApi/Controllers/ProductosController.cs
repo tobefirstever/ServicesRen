@@ -1,4 +1,5 @@
-﻿using Renavi.Application.Interfaces;
+﻿using Renavi.Application.DTO.Dtos.Productos;
+using Renavi.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,18 @@ namespace Renavi.Services.WebApi.Controllers
             _productosApplication = productosApplication;
         }
 
-        [HttpGet()]
-        [Route("api/precalificacion")]
-        public async Task<IHttpActionResult> GetList()
+        [HttpPost()]
+        [Route("api/productos")]
+        public async Task<IHttpActionResult> GetList(ProductosDto request)
         {
-            return Ok(await _productosApplication.GetList());
+            return Ok(await _productosApplication.GetList(request));
+        }
+
+        [HttpPost()]
+        [Route("api/productosweb")]
+        public async Task<IHttpActionResult> GetListWeb(ProductosWebDto request)
+        {
+            return Ok(await _productosApplication.GetListWeb(request));
         }
     }
 }

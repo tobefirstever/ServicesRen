@@ -6,20 +6,14 @@ using System.Threading.Tasks;
 
 namespace Renavi.Application.DTO.Dtos.Ubigeo
 {
-    public class UbigeoDto
+    public class UbigeoResponseDto
     {
-        public string IdUbigeo { get; set; }
 
+      public string IdUbigeo { get; set; }
         public int IdDepartamento { get; set; }
-
         public int IdProvincia { get; set; }
-
         public int IdDistrito { get; set; }
-
         public string Nombre { get; set; }
 
-        public decimal Latitud { get; set; }
-
-        public decimal Longitud { get; set; }
     }
 }

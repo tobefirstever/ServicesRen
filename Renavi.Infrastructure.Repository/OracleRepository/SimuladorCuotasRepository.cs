@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using Renavi.Application.DTO.Dtos.SimuladorCuotas;
 using Renavi.Domain.Entities.Entities;
 using Renavi.Infrastructure.Interfaces.Configuration;
 using Renavi.Infrastructure.Interfaces.Repository;
@@ -22,13 +23,13 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<IEnumerable<SimuladorCuotasEntity>> GetList()
+        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList()
         {
-            using (var conexion = _connectionFactory?.GetConnection())
+            using (var conexion = _connectionFactory?.GetConnectionSQL())
             {
                 var dynamicParameters = new UtilParameters();
-                dynamicParameters.Add( name : "ocGAR", oracleDbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
-                return await conexion.QueryAsync<SimuladorCuotasEntity>("PKGSTP_GARANTIA_CS_JOSE.SPRNSTP_PORTALFMV3", param: dynamicParameters, commandType: CommandType.StoredProcedure);
+                //dynamicParameters.Add( name : "ocGAR", oracleDbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
+                return await conexion.QueryAsync<SimuladorBancosTasasResponseDto>("SPRCOF_LISTAR_BANCOS_TASAS", param: dynamicParameters, commandType: CommandType.StoredProcedure);
             }
         }
     }

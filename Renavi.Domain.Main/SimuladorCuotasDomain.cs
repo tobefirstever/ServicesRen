@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.SimuladorCuotas;
+using Renavi.Domain.Entities.Entities;
 using Renavi.Domain.Interfaces;
 using Renavi.Infrastructure.Interfaces.Repository;
 using System;
@@ -19,7 +20,7 @@ namespace Renavi.Domain.Main
         }
 
 
-        public async Task<IEnumerable<SimuladorCuotasEntity>> GetList()
+        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList()
         {
             return await _simuladorCuotasRepository.GetList();
         }

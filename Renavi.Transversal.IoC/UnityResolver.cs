@@ -76,6 +76,13 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<ISimuladorCuotasApplication, SimuladorCuotasApplication>();
             container.RegisterType<ISimuladorCuotasDomain, SimuladorCuotasDomain>();
             container.RegisterType<ISimuladorCuotasRepository, SimuladorCuotasRepository>();
+
+            #endregion
+
+            #region Agencia
+            container.RegisterType<IAgenciaApplication, AgenciaApplication>();
+            container.RegisterType<IAgenciaDomain, AgenciaDomain>();
+            container.RegisterType<IAgenciaRepository, AgenciaRepository>();
             #endregion
 
             #region Ubigeo
@@ -94,6 +101,17 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IParametroApplication, ParametroApplication>();
             container.RegisterType<IParametroDomain, ParametroDomain>();
             container.RegisterType<IParametroRepository, ParametroRepository>();
+            #endregion
+
+            #region Metricas
+            container.RegisterType<IMetricasApplication, MetricasApplication>();
+            container.RegisterType<IMetricasRepository, MetricasRepository>();
+            container.RegisterType<IMetricasDomain, MetricasDomain>();
+            #endregion
+
+            #region Videos
+            container.RegisterType<IVideoApplication, VideoApplication>();
+
             #endregion
 
             return container;

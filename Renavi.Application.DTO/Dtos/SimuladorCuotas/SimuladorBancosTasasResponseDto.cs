@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Renavi.Application.DTO.Dtos.SimuladorCuotas
 {
-    public class SimuladorCuotasDto
+    public class SimuladorBancosTasasResponseDto
     {
-        public int Id { get; set; }
-        public double ValorVivienda { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public double tasa { get; set; }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Renavi.Application.Interfaces;
+﻿using Renavi.Application.DTO.Dtos.Ubigeo;
+using Renavi.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,11 @@ namespace Renavi.Services.WebApi.Controllers
             _ubigeoApplication = ubigeoApplication;
         }
 
-        [HttpGet()]
+        [HttpPost()]
         [Route("api/ubigeo")]
-        public async Task<IHttpActionResult> GetList()
+        public async Task<IHttpActionResult> GetList(UbigeoDto request)
         {
-            return Ok(await _ubigeoApplication.GetList());
+            return Ok(await _ubigeoApplication.GetList(request));
         }
     }
 }

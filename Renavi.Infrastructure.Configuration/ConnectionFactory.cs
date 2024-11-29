@@ -10,11 +10,13 @@ namespace Renavi.Infrastructure.Configuration
     public class ConnectionFactory : IConnectionFactory
     {
         private readonly string _connectionString;
+        private readonly string _connectionStringSQL;
 
 
         public ConnectionFactory(IConnectionStringProvider  connectionStringProvider)
         {
             _connectionString = connectionStringProvider.GetConnectionString();
+            _connectionStringSQL = connectionStringProvider.GetConnectionStringSQL();
         }
 
 
@@ -29,6 +31,32 @@ namespace Renavi.Infrastructure.Configuration
             }
 
             conn.ConnectionString = _connectionString;
+
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                // Logger.LogError(ex, "Error opening database connection");
+                conn.Dispose();
+                throw;
+            }
+
+            return conn;
+        }
+
+        public IDbConnection GetConnectionSQL()
+        {
+            var factory = DbProviderFactories.GetFactory(Constantes.SQLClient);
+            var conn = factory.CreateConnection();
+
+            if (conn == null)
+            {
+                throw new InvalidOperationException("Failed to create a connection using the provided factory.");
+            }
+
+            conn.ConnectionString = _connectionStringSQL;
 
             try
             {

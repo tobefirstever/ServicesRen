@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.Productos;
+using Renavi.Domain.Entities.Entities;
 using Renavi.Domain.Interfaces;
 using Renavi.Infrastructure.Interfaces.Repository;
 using System;
@@ -19,9 +20,9 @@ namespace Renavi.Domain.Main
         }
 
 
-        public async Task<IEnumerable<ProductosEntity>> GetList()
+        public async Task<IEnumerable<ProductosWebResponseDto>> GetList(ProductosWebDto request)
         {
-            return await _productosRepository.GetList();
+            return await _productosRepository.GetList(request);
         }
     }
 }
