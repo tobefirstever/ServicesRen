@@ -10,11 +10,11 @@ namespace Renavi.Application.DTO.Dtos.Ubigeo
     {
         public string IdUbigeo { get; set; }
 
-        public int IdDepartamento { get; set; }
+        public string IdDepartamento { get; set; }
 
-        public int IdProvincia { get; set; }
+        public string IdProvincia { get; set; }
 
-        public int IdDistrito { get; set; }
+        public string IdDistrito { get; set; }
 
         public string Nombre { get; set; }
 
