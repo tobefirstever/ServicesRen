@@ -29,9 +29,9 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
                 dynamicParameters.Add(name: "pSDIR_NRO", value: direccionEntity.Nro, dbType: DbType.String, direction: ParameterDirection.Input);
                 dynamicParameters.Add(name: "pSDIR_MANZAN", value: direccionEntity.Mza, dbType: DbType.String, direction: ParameterDirection.Input);
                 dynamicParameters.Add(name: "pSDIR_LOTE", value: direccionEntity.Lote, dbType: DbType.String, direction: ParameterDirection.Input);
-                dynamicParameters.Add(name: "pCDIR_ID_DEP", value: direccionEntity.IdDepartamento, dbType: DbType.String, direction: ParameterDirection.Input);
-                dynamicParameters.Add(name: "pCDIR_ID_PROV", value: direccionEntity.IdProvincia, dbType: DbType.String, direction: ParameterDirection.Input);
-                dynamicParameters.Add(name: "pCDIR_ID_DIST", value: direccionEntity.IdDistrito, dbType: DbType.String, direction: ParameterDirection.Input);
+                dynamicParameters.Add(name: "pCDIR_ID_DEP", value: direccionEntity.IdDepartamento, dbType: DbType.Int32, direction: ParameterDirection.Input);
+                dynamicParameters.Add(name: "pCDIR_ID_PROV", value: direccionEntity.IdProvincia, dbType: DbType.Int32, direction: ParameterDirection.Input);
+                dynamicParameters.Add(name: "pCDIR_ID_DIST", value: direccionEntity.IdDistrito, dbType: DbType.Int32, direction: ParameterDirection.Input);
                 dynamicParameters.Add(name: "pCDIR_ID_TIPODOM", value: direccionEntity.IdTipoDomicilio, dbType: DbType.String, direction: ParameterDirection.Input);
                 dynamicParameters.Add(name: "pSDIR_REFERENCIA", value: direccionEntity.DireccionReferencia, dbType: DbType.String, direction: ParameterDirection.Input);
                 dynamicParameters.Add(name: "pSDIR_COD_POSTAL", value: direccionEntity.CodigoPostal, dbType: DbType.String, direction: ParameterDirection.Input);

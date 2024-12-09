@@ -20,11 +20,11 @@ namespace Renavi.Domain.Entities.Entities
 
         public string Lote { get; set; }
 
-        public string IdDepartamento { get; set; }
+        public int IdDepartamento { get; set; }
 
-        public string IdProvincia { get; set; }
+        public int IdProvincia { get; set; }
 
-        public string IdDistrito { get; set; }
+        public int IdDistrito { get; set; }
 
         public int IdTipoDomicilio { get; set; }
 
