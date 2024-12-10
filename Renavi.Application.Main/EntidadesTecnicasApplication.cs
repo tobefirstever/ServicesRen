@@ -43,22 +43,10 @@ namespace Renavi.Application.Main
         public async Task<GeneralResponse> ObtenerEntidadesTecnicas(RequestEntidadesTecnicasDTO request)
         {
             var resultado = new ResultadoEntidadesTecnicasDTO();
-         
             var listaEntidades = Mapping.Map<IEnumerable<Entidad>, IEnumerable<EntidadesTecnicasDTO>>(await _entidadesTenicasRepository.ObtenerEntidadesTecnicas(request)).ToList();
-
             int totalRegistros = listaEntidades.Count;
-
-            var listaFiltrada = listaEntidades.Where(e =>
-                (string.IsNullOrEmpty(request.RazonSocial) || e.RazonSocial.Contains(request.RazonSocial)) &&
-                (string.IsNullOrEmpty(request.Ruc) || e.Ruc.Contains(request.Ruc)) &&
-                (string.IsNullOrEmpty(request.Departamento) || e.Departamento == request.Departamento) &&
-                (string.IsNullOrEmpty(request.Clasificacion) || e.Clasificacion == request.Clasificacion)).ToList();
-
-            int totalRegistrosFiltrados = listaFiltrada.Count;
-
-
-            var datosPaginados = listaFiltrada.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
-
+            int totalRegistrosFiltrados = listaEntidades.Count;
+            var datosPaginados = listaEntidades.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
             resultado.EntidadesTecnicas = datosPaginados;
             resultado.TotalRegistros = totalRegistros;
             resultado.TotalRegistrosFiltrados = totalRegistrosFiltrados;

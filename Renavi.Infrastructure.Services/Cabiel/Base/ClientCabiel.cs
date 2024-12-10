@@ -29,7 +29,7 @@ namespace Renavi.Infrastructure.Services.Cabiel.Base
         public async Task<DataTable> GetEntidadesTecnicas(string razonSocial, string ruc, string departamento, string clasificacion)
         {
             ThrowIfDisposed();
-            return await _servicioWEBSoapClient.ObtenerListaETAsync(string.Empty, string.Empty, string.Empty, clasificacion);
+            return await _servicioWEBSoapClient.ObtenerListaETAsync(razonSocial, ruc, departamento, clasificacion);
         }
 
         
