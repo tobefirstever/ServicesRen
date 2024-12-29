@@ -200,15 +200,16 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\EntidadesTecnicasController.cs" />
+    <Compile Include="Controllers\InteraccionController.cs" />
     <Compile Include="Controllers\OfertaInmobiliariaController.cs" />
     <Compile Include="Controllers\ParametroController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PrecalificacionController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\SimuladorCuotasController.cs" />
     <Compile Include="Controllers\UbigeoController.cs" />
     <Compile Include="Controllers\MetricasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Core\CustomPolicyProvider.cs" />
     <Compile Include="Core\DynamicPolicyProviderFactory.cs" />
     <Compile Include="Core\TokenGenerator.cs" />

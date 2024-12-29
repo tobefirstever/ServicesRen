@@ -21,13 +21,20 @@ namespace Renavi.Application.Main
             _precalificacionDomain = precalificacionDomain;
         }
 
-        public async Task<Response<IEnumerable<PrecalificacionDto>>> GetList()
-        {
-            var response = new Response<IEnumerable<PrecalificacionDto>> { Data = new List<PrecalificacionDto>() };
-            IEnumerable<PrecalificacionEntity> gerenciaEntities = await _precalificacionDomain.GetList();
 
-            response.Data = Mapping.Map<IEnumerable<PrecalificacionEntity>, IEnumerable<PrecalificacionDto>>(gerenciaEntities);
-            return response;
+        public async Task<ObtenerPrecalificacionResponseDto> GetPrecalificacion(ObtenerPrecalificacionDto request)
+        {
+            return await _precalificacionDomain.GetPrecalificacion(request);
+        }
+
+        public async Task<ObtenerRespuestaResponseDto> GetRespuesta(ObtenerRespuestaDto request)
+        {
+            return await _precalificacionDomain.GetRespuesta(request);
+        }
+
+        public async Task<PrecalificacionResponseDto> InsertarPrecalificacion(PrecalificacionDto request)
+        {
+            return await _precalificacionDomain.InsertarPrecalificacion(request);
         }
     }
 }

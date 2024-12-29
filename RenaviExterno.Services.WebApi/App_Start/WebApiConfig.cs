@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web;
 
 namespace RenaviExterno.Services.WebApi
 {
@@ -36,12 +37,14 @@ namespace RenaviExterno.Services.WebApi
                 config.MapHttpAttributeRoutes();
                 config.MessageHandlers.Add(new TokenValidationHandler());
 
-                config.Routes.MapHttpRoute(
+
+                    config.Routes.MapHttpRoute(
                     name: "swagger_root",
                     routeTemplate: "",
                     defaults: null,
                     constraints: null,
                     handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger"));
+
 
                 config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new { id = RouteParameter.Optional });
             }

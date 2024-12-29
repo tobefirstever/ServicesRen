@@ -23,12 +23,12 @@ namespace Renavi.Infrastructure.Repository.OracleRepository
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList()
+        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList(SimuladorBancosTasasDto request)
         {
             using (var conexion = _connectionFactory?.GetConnectionSQL())
             {
                 var dynamicParameters = new UtilParameters();
-                //dynamicParameters.Add( name : "ocGAR", oracleDbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
+                dynamicParameters.Add(name: "tipo", request.tipo, dbType: DbType.Int32, direction: ParameterDirection.Input);
                 return await conexion.QueryAsync<SimuladorBancosTasasResponseDto>("SPRCOF_LISTAR_BANCOS_TASAS", param: dynamicParameters, commandType: CommandType.StoredProcedure);
             }
         }

@@ -1,4 +1,5 @@
 
+using RenaviExterno.Application;
 using RenaviExterno.Application.Interfaces;
 using RenaviExterno.Application.Main;
 using RenaviExterno.Services;
@@ -55,6 +56,21 @@ namespace RenaviExterno.Transversal.IoC
 
             container.RegisterType<IEntidadesTecnicasApplication, EntidadesTecnicasApplication>();
             container.RegisterType<IEntidadesTecnicasService, EntidadesTecnicasService>();
+
+            container.RegisterType<IParametroApplication, ParametroApplication>();
+            container.RegisterType<IParametroService, ParametroService>();
+
+            container.RegisterType<IPerfilApplication, PerfilApplication>();
+            container.RegisterType<IPerfilService, PerfilService>();
+
+            container.RegisterType<IUsuarioApplication, UsuarioApplication>();
+            container.RegisterType<IUsuarioService, UsuarioService>();
+
+            container.RegisterType<IInteraccionApplication, InteraccionApplication>();
+            container.RegisterType<IInteraccionService, InteraccionService>();
+
+            container.RegisterType<IPrecalificacionApplication, PrecalificacionApplication>();
+            container.RegisterType<IPrecalificacionService, PrecalificacionService>();
 
             return container;
         }

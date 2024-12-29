@@ -11,5 +11,7 @@ namespace Renavi.Application.Interfaces
     public interface IUbigeoApplication
     {
         Task<IEnumerable<UbigeoResponseDto>> GetList(UbigeoDto request);
+
+        Task<IEnumerable<UbigeoResponseDto>> GetListAll();
     }
 }

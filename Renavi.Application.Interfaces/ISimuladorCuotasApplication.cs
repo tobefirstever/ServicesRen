@@ -14,6 +14,6 @@ namespace Renavi.Application.Interfaces
         Task<SimuladorCuotasMejoramientoResponseDto> GetListMejoramiento(SimuladorCuotasMejoramientoDto request);
         Task<SimuladorCuotasConstruccionResponseDto> GetListConstruccion(SimuladorCuotasConstruccionDto request);
         Task<SimuladorCronogramaResponseDto> GetCronograma(SimuladorCronogramaDto request);
-        Task<List<SimuladorBancosTasasResponseDto>> GetTasas();
+        Task<List<SimuladorBancosTasasResponseDto>> GetTasas(SimuladorBancosTasasDto request);
     }
 }

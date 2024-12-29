@@ -20,9 +20,9 @@ namespace Renavi.Domain.Main
         }
 
 
-        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList()
+        public async Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList(SimuladorBancosTasasDto request)
         {
-            return await _simuladorCuotasRepository.GetList();
+            return await _simuladorCuotasRepository.GetList(request);
         }
     }
 }

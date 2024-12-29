@@ -10,6 +10,6 @@ namespace Renavi.Application.Interfaces
 {
     public interface IParametroApplication
     {
-        Task<Response<IEnumerable<ParametroDto>>> Buscar(int idGrupo, string codigoAbreviatura);
+        Task<IEnumerable<ParametroDto>> Buscar(string grupoParametros);
     }
 }

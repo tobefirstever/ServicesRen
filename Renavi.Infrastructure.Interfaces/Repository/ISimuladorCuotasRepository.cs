@@ -10,6 +10,6 @@ namespace Renavi.Infrastructure.Interfaces.Repository
 {
     public interface ISimuladorCuotasRepository
     {
-        Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList();
+        Task<IEnumerable<SimuladorBancosTasasResponseDto>> GetList(SimuladorBancosTasasDto request);
     }
 }

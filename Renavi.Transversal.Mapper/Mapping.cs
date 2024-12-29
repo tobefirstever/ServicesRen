@@ -11,6 +11,7 @@ namespace Renavi.Transversal.Mapper
                 x?.AddProfile<UbigeoProfile>();
                 x?.AddProfile<ParametroProfile>();
                 x?.AddProfile<EntidadTecnicaProfile>();
+                x?.AddProfile<UsuarioProfile>();
             });
         }
 

@@ -9,6 +9,6 @@ namespace Renavi.Domain.Interfaces
 {
     public interface IParametroDomain
     {
-        Task<IEnumerable<ParametroEntity>> ObtenerParametro(int idGrupo, string codigoAbreviatura);
+        Task<IEnumerable<ParametroEntity>> ObtenerParametro(string grupoParametros);
     }
 }

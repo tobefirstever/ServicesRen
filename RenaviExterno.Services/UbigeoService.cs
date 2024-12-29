@@ -46,5 +46,39 @@ namespace RenaviExterno.Services.Interfaces
                 return model;
             }
         }
+
+        public async Task<Response<List<UbigeoResponseDto>>> GetListAll()
+        {
+            var model = new Response<List<UbigeoResponseDto>> { Data = new List<UbigeoResponseDto>() };
+
+            try
+            {
+
+                var APIURL = ConfigurationManager.AppSettings?["UrlService"]?.ToString();
+                var url = $"{APIURL}/api/ubigeoall";
+
+                HttpClient client = new HttpClient();
+                string json = "";
+                var requestMessage = new HttpRequestMessage();
+
+                requestMessage.Method = new HttpMethod("GET");
+                //requestMessage.Content = new StringContent(json, Encoding.UTF8, "application/json");
+                requestMessage.RequestUri = new Uri(url);
+
+                var httpResponse = await client.SendAsync(requestMessage);
+
+                var result = await httpResponse.Content.ReadAsStringAsync();
+                var datos = JsonConvert.DeserializeObject<List<UbigeoResponseDto>>(result);
+                model.Data = datos;
+
+                return model;
+
+            }
+
+            catch (Exception ex)
+            {
+                return model;
+            }
+        }
     }
 }

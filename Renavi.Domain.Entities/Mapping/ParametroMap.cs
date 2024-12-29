@@ -12,9 +12,14 @@ namespace Renavi.Domain.Entities.Mapping
     {
         public ParametroMap()
         {
-            Map(p => p.Id).ToColumn("CPAR_ID");
-            Map(p => p.Nombre).ToColumn("SPAR_NOMBRE");
-            Map(p => p.CodigoAbreviatura).ToColumn("SPAR_ABREVIATURA");
+            Map(p => p.IdParametro).ToColumn("ID_PARAM");
+            Map(p => p.CodigoParametro).ToColumn("COD_PARAM");
+            Map(p => p.IdDetalleParametro).ToColumn("ID_DET_PARAM");
+            Map(p => p.CodigoDetalleParametro).ToColumn("COD_DET_PARAM");
+            Map(p => p.Descripcion).ToColumn("DESC_DET_PARAM");
+            Map(p => p.Valor1).ToColumn("VAL1");
+            Map(p => p.Valor2).ToColumn("VAL2");
+            Map(p => p.Valor3).ToColumn("VAL3");
         }
     }
 }

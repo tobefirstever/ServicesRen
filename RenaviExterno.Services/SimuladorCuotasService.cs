@@ -154,7 +154,7 @@ namespace RenaviExterno.Services
             }
         }
 
-        public async Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas()
+        public async Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas(SimuladorBancosTasasDto request)
         {
             var model = new Response<List<SimuladorBancosTasasResponseDto>> { Data = new List<SimuladorBancosTasasResponseDto>() };
 
@@ -165,9 +165,10 @@ namespace RenaviExterno.Services
                 var url = $"{APIURL}/api/BancosTasas";
 
                 HttpClient client = new HttpClient();
-                string json ="";
+                string json = JsonConvert.SerializeObject(request); ;
                 var requestMessage = new HttpRequestMessage();
                 requestMessage.Method = new HttpMethod("POST");
+                requestMessage.Content = new StringContent(json, Encoding.UTF8, "application/json");
                 requestMessage.RequestUri = new Uri(url);
 
                 var httpResponse = await client.SendAsync(requestMessage);

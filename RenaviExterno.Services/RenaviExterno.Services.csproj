@@ -45,12 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InteraccionService.cs" />
+    <Compile Include="ParametroService.cs" />
     <Compile Include="AgenciaService.cs" />
     <Compile Include="EntidadesTecnicasService.cs" />
+    <Compile Include="PerfilService.cs" />
+    <Compile Include="PrecalificacionService.cs" />
     <Compile Include="ProductosService.cs" />
     <Compile Include="MetricasService.cs" />
     <Compile Include="OfertaInmobiliariaService.cs" />
     <Compile Include="UbigeoService.cs" />
+    <Compile Include="UsuarioService.cs" />
     <Compile Include="VideosService.cs" />
     <Compile Include="SimuladorCuotasService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

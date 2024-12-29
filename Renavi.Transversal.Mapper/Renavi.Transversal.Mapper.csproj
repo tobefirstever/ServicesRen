@@ -51,6 +51,7 @@
     <Compile Include="Profile\EntidadTecnicaProfile.cs" />
     <Compile Include="Profile\ParametroProfile.cs" />
     <Compile Include="Profile\UbigeoProfile.cs" />
+    <Compile Include="Profile\UsuarioProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

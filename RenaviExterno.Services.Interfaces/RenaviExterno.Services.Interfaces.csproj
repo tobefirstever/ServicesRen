@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInteraccionService.cs" />
+    <Compile Include="IParametroService.cs" />
     <Compile Include="IEntidadesTecnicasService.cs" />
+    <Compile Include="IPerfilService.cs" />
+    <Compile Include="IPrecalificacionService.cs" />
+    <Compile Include="IUsuarioService.cs" />
     <Compile Include="IVideosService.cs" />
     <Compile Include="IUbigeoService.cs" />
     <Compile Include="IProductosService.cs" />

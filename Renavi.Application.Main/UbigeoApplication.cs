@@ -32,6 +32,14 @@ namespace Renavi.Application.Main
             return response;
         }
 
+        public async Task<IEnumerable<UbigeoResponseDto>> GetListAll()
+        {
+            var response = new List<UbigeoResponseDto>();
+            IEnumerable<UbigeoEntity> gerenciaEntities = await _ubigeoDomain.GetList();
+            response = Mapping.Map<IEnumerable<UbigeoEntity>, IEnumerable<UbigeoResponseDto>>(gerenciaEntities).ToList();
+            return response;
+        }
+
         public IEnumerable<UbigeoEntity> obtenerDatos(IEnumerable<UbigeoEntity> gerenciaEntities, int Departamento, int Provincia)
         {
 

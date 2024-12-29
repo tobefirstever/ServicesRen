@@ -10,6 +10,9 @@ namespace Renavi.Application.Interfaces
 {
     public interface IPrecalificacionApplication
     {
-        Task<Response<IEnumerable<PrecalificacionDto>>> GetList();
+        Task<PrecalificacionResponseDto> InsertarPrecalificacion(PrecalificacionDto request);
+
+        Task<ObtenerPrecalificacionResponseDto> GetPrecalificacion(ObtenerPrecalificacionDto request);
+        Task<ObtenerRespuestaResponseDto> GetRespuesta(ObtenerRespuestaDto request);
     }
 }

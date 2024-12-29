@@ -11,5 +11,12 @@ namespace Renavi.Application.Interfaces
     public interface IUsuarioApplication
     {
         Task<Response<IEnumerable<UsuarioDto>>> GetList();
+        Task<UsuarioResponseDto> RegistroUsuario(UsuarioDto request);
+
+        Task<UsuarioGeneralResponseDto> EnvioCorreoPassword(UsuarioCorreonDto request);
+
+        Task<UsuarioGeneralResponseDto> ActualizarPassword(UsuarioACtualizarDto request);
+
+        Task<UsuarioResponseDto> Login(UsuarioAutenticacionDto request);
     }
 }

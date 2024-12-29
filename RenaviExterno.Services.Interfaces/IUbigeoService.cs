@@ -12,5 +12,7 @@ namespace RenaviExterno.Services.Interfaces
     {
 
         Task<Response<List<UbigeoResponseDto>>> GetList(UbigeoDto request);
+
+        Task<Response<List<UbigeoResponseDto>>> GetListAll();
     }
 }

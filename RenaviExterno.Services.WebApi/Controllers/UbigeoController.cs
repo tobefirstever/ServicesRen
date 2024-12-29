@@ -25,5 +25,12 @@ namespace RenaviExterno.Services.WebApi.Controllers
         {
             return Ok(await _ubigeoApplication.GetList(request));
         }
+
+        [HttpGet()]
+        [Route("api/ubigeoall")]
+        public async Task<IHttpActionResult> GetListAll()
+        {
+            return Ok(await _ubigeoApplication.GetListAll());
+        }
     }
 }

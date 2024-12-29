@@ -40,6 +40,9 @@ namespace Renavi.Transversal.IoC
             {            
                 config.AddMap(new UbigeoMap());
                 config.AddMap(new ParametroMap());
+                config.AddMap(new ContactoMap());
+                config.AddMap(new DireccionMap());
+                config.AddMap(new PersonaMap());
             });
        
             #region Entidades tecnicas
@@ -109,10 +112,22 @@ namespace Renavi.Transversal.IoC
             container.RegisterType<IMetricasDomain, MetricasDomain>();
             #endregion
 
-            #region Videos
-            container.RegisterType<IVideoApplication, VideoApplication>();
 
-            #endregion
+            container.RegisterType<IPerfilApplication, PerfilApplication>();
+
+            container.RegisterType<IDireccionRepository, DireccionRepository>();
+            container.RegisterType<IDireccionDomain, DireccionDomain>();
+
+
+            container.RegisterType<IPersonaRepository, PersonaRepository>();
+            container.RegisterType<IPersonaDomain, PersonaDomain>();
+
+            container.RegisterType<IContactoRepository, ContactoRepository>();
+            container.RegisterType<IContactoDomain, ContactoDomain>();
+
+            container.RegisterType<IInteraccionApplication, InteraccionApplication>();
+            container.RegisterType<IInteraccionRepository, InteraccionRepository>();
+            container.RegisterType<IInteraccionDomain, InteraccionDomain>();
 
             return container;
         }

@@ -43,15 +43,16 @@
   <ItemGroup>
     <Compile Include="IEntidadesTecnicasApplication.cs" />
     <Compile Include="IGeneralApplication.cs" />
+    <Compile Include="IInteraccionApplication.cs" />
     <Compile Include="IOfertaInmobiliariaApplication.cs" />
     <Compile Include="IParametroApplication.cs" />
+    <Compile Include="IPerfilApplication.cs" />
     <Compile Include="IPrecalificacionApplication.cs" />
     <Compile Include="IProductosApplication.cs" />
     <Compile Include="ISimuladorCuotasApplication.cs" />
     <Compile Include="IAgenciaApplication.cs" />
     <Compile Include="IUbigeoApplication.cs" />
     <Compile Include="IMetricasApplication.cs" />
-    <Compile Include="IVideoApplication.cs" />
     <Compile Include="IUsuarioApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

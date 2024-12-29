@@ -332,86 +332,14 @@ namespace Renavi.Application.Main
             }
         }
 
-        public async Task<List<SimuladorBancosTasasResponseDto>> GetTasas()
+        public async Task<List<SimuladorBancosTasasResponseDto>> GetTasas(SimuladorBancosTasasDto request)
         {
             var response = new List<SimuladorBancosTasasResponseDto>();
 
 
             var bancos = new List<SimuladorBancosTasasResponseDto>();
 
-            var data = await _simuladorCuotasDomain.GetList();
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 1,
-            //    nombre = "Scotiabank",
-            //    tasa = 8.98
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 2,
-            //    nombre = "Interbank",
-            //    tasa = 9.27
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 3,
-            //    nombre = "Financiera Efectiva",
-            //    tasa = 9.44
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 4,
-            //    nombre = "CMAC Trujillo",
-            //    tasa = 11.39
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 5,
-            //    nombre = "CMAC Maynas",
-            //    tasa = 14.50
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 6,
-            //    nombre = "Banco Pichincha",
-            //    tasa = 9.72
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 7,
-            //    nombre = "Banco de Crédito",
-            //    tasa = 9.43
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 8,
-            //    nombre = "Banco de Comercio",
-            //    tasa = 10.27
-            //});
-
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 9,
-            //    nombre = "BANBIF",
-            //    tasa = 9.62
-            //});
-
-            //bancos.Add(new SimuladorBancosTasasResponseDto
-            //{
-            //    id = 10,
-            //    nombre = "BBVA Perú",
-            //    tasa = 9.02
-            //});
-
+            var data = await _simuladorCuotasDomain.GetList(request);
 
             response = data.ToList();
 

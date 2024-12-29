@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IContactoDomain.cs" />
+    <Compile Include="IDireccionDomain.cs" />
     <Compile Include="IEntidadesTecnicasDomain.cs" />
     <Compile Include="IGeneralDomain.cs" />
+    <Compile Include="IInteraccionDomain.cs" />
     <Compile Include="IOfertaInmobiliariaDomain.cs" />
     <Compile Include="IParametroDomain.cs" />
+    <Compile Include="IPersonaDomain.cs" />
     <Compile Include="IPrecalificacionDomain.cs" />
     <Compile Include="IProductosDomain.cs" />
     <Compile Include="ISimuladorCuotasDomain.cs" />

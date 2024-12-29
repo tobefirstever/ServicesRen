@@ -41,9 +41,9 @@ namespace RenaviExterno.Application.Main
             return await _simuladorCuotasService.GetListMejoramiento(request);
         }
 
-        public async Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas()
+        public async Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas(SimuladorBancosTasasDto request)
         {
-            return await _simuladorCuotasService.GetTasas();
+            return await _simuladorCuotasService.GetTasas(request);
         }
     }
 }

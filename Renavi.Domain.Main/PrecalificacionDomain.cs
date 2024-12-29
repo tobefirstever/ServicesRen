@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.Precalificacion;
+using Renavi.Domain.Entities.Entities;
 using Renavi.Domain.Interfaces;
 using Renavi.Infrastructure.Interfaces.Repository;
 using System;
@@ -19,9 +20,19 @@ namespace Renavi.Domain.Main
         }
 
 
-        public async Task<IEnumerable<PrecalificacionEntity>> GetList()
+        public async Task<ObtenerPrecalificacionResponseDto> GetPrecalificacion(ObtenerPrecalificacionDto request)
         {
-            return await _precalificacionRepository.GetList();
+            return await _precalificacionRepository.GetPrecalificacion(request);
+        }
+
+        public async Task<ObtenerRespuestaResponseDto> GetRespuesta(ObtenerRespuestaDto request)
+        {
+            return await _precalificacionRepository.GetRespuesta(request);
+        }
+
+        public async Task<PrecalificacionResponseDto> InsertarPrecalificacion(PrecalificacionDto request)
+        {
+            return await _precalificacionRepository.InsertarPrecalificacion(request);
         }
     }
 }

@@ -15,6 +15,6 @@ namespace RenaviExterno.Services.Interfaces
         Task<Response<SimuladorCuotasMejoramientoResponseDto>> GetListMejoramiento(SimuladorCuotasMejoramientoDto request);
         Task<Response<SimuladorCuotasConstruccionResponseDto>> GetListConstruccion(SimuladorCuotasConstruccionDto request);
         Task<Response<SimuladorCronogramaResponseDto>> GetCronograma(SimuladorCronogramaDto request);
-        Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas();
+        Task<Response<List<SimuladorBancosTasasResponseDto>>> GetTasas(SimuladorBancosTasasDto request);
     }
 }

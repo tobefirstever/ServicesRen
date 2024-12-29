@@ -1,4 +1,5 @@
-﻿using Renavi.Domain.Entities.Entities;
+﻿using Renavi.Application.DTO.Dtos.Precalificacion;
+using Renavi.Domain.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace Renavi.Domain.Interfaces
 {
   public  interface IPrecalificacionDomain
     {
-        Task<IEnumerable<PrecalificacionEntity>> GetList();
+ 
+
+        Task<PrecalificacionResponseDto> InsertarPrecalificacion(PrecalificacionDto request);
+
+        Task<ObtenerPrecalificacionResponseDto> GetPrecalificacion(ObtenerPrecalificacionDto request);
+        Task<ObtenerRespuestaResponseDto> GetRespuesta(ObtenerRespuestaDto request);
     }
 }

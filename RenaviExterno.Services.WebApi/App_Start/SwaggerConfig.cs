@@ -5,6 +5,7 @@ using Swashbuckle.Application;
 using System;
 using System.Reflection;
 using System.IO;
+using System.Configuration;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -15,6 +16,14 @@ namespace RenaviExterno.Services.WebApi
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
+
+            string setting = ConfigurationManager.AppSettings["EnableSwaggerPage"];
+
+            // Only enable the Swagger page is the webconfig setting explicitly enables it
+            if (string.IsNullOrWhiteSpace(setting) || !bool.TryParse(setting, out bool enableSwaggerPage) || !enableSwaggerPage)
+            {
+                return;
+            }
 
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
@@ -39,6 +48,7 @@ namespace RenaviExterno.Services.WebApi
                     c?.IncludeXmlComments(commentsFile);
                 })
                 ?.EnableSwaggerUi(c => { c?.InjectJavaScript(thisAssembly, "RenaviExterno.Services.WebApi.CustomContent.api-key-header-auth.js"); });
+
         }
     }
 }

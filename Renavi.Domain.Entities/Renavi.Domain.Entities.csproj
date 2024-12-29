@@ -48,16 +48,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\BaseCustomClass.cs" />
+    <Compile Include="Entities\ContactoEntity.cs" />
+    <Compile Include="Entities\DireccionEntity.cs" />
     <Compile Include="Entities\EntidadesTecnicasEntity.cs" />
     <Compile Include="Entities\GeneralEntity.cs" />
     <Compile Include="Entities\OfertaInmobiliariaEntity.cs" />
     <Compile Include="Entities\ParametroEntity.cs" />
+    <Compile Include="Entities\PersonaEntity.cs" />
     <Compile Include="Entities\PrecalificacionEntity.cs" />
     <Compile Include="Entities\ProductosEntity.cs" />
     <Compile Include="Entities\SimuladorCuotasEntity.cs" />
     <Compile Include="Entities\UbigeoEntity.cs" />
     <Compile Include="Entities\UsuarioEntity.cs" />
+    <Compile Include="Mapping\ContactoMap.cs" />
+    <Compile Include="Mapping\DireccionMap.cs" />
     <Compile Include="Mapping\ParametroMap.cs" />
+    <Compile Include="Mapping\PersonaMap.cs" />
     <Compile Include="Mapping\UbigeoMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InteraccionApplication.cs" />
+    <Compile Include="PrecalificacionApplication.cs" />
+    <Compile Include="ParametroApplication.cs" />
     <Compile Include="AgenciaApplication.cs" />
     <Compile Include="MetricasApplication.cs" />
     <Compile Include="EntidadesTecnicasApplication.cs" />
     <Compile Include="OfertaInmobiliariaApplication.cs" />
+    <Compile Include="PerfilApplication.cs" />
     <Compile Include="ProductosApplication.cs" />
     <Compile Include="UbigeoApplication.cs" />
+    <Compile Include="UsuarioApplication.cs" />
     <Compile Include="VideosApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimuladorCuotasApplication.cs" />

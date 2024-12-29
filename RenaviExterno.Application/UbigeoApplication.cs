@@ -23,5 +23,10 @@ namespace RenaviExterno.Application.Interfaces
         {
             return await _ubigeoService.GetList(request);
         }
+
+        public async Task<Response<List<UbigeoResponseDto>>> GetListAll()
+        {
+            return await _ubigeoService.GetListAll();
+        }
     }
 }

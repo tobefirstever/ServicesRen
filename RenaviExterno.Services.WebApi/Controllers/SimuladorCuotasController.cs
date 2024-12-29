@@ -50,9 +50,9 @@ namespace RenaviExterno.Services.WebApi.Controllers
 
         [HttpPost()]
         [Route("api/BancosTasas")]
-        public async Task<IHttpActionResult> GetTasas()
+        public async Task<IHttpActionResult> GetTasas(SimuladorBancosTasasDto request)
         {
-            return Ok(await _simuladorCuotasApplication.GetTasas());
+            return Ok(await _simuladorCuotasApplication.GetTasas(request));
         }
     }
 }
