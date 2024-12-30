@@ -251,7 +251,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59141</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44325/RenaviRest</IISUrl>
+          <IISUrl>http://localhost:44325/RenaviRest</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:44325/RenaviRest</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
